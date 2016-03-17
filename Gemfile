@@ -42,11 +42,12 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 
 gem 'puma'
 
+gem 'ffaker', '~> 2.2' # for generating fake seeds
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
-  gem 'ffaker', '~> 2.2' # for generating fake seeds
 end
 
 group :development do
