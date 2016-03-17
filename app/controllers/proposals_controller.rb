@@ -3,7 +3,7 @@ class ProposalsController < ApplicationController
   before_action :authenticate_user!, only: [:upvote]
 
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.all.order(:cached_weighted_average => :desc)
   end
 
   def upvote
