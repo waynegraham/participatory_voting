@@ -1,4 +1,4 @@
-class AddCachedVotesToproposals < ActiveRecord::Migration
+class AddCachedVotesToProposals < ActiveRecord::Migration
   def change
     add_column :proposals, :cached_votes_total, :integer, :default => 0
     add_column :proposals, :cached_votes_score, :integer, :default => 0
