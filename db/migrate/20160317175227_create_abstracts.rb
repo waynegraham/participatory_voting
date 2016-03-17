@@ -1,6 +1,6 @@
-class CreateAbstracts < ActiveRecord::Migration
+class CreateProposals < ActiveRecord::Migration
   def change
-    create_table :abstracts do |t|
+    create_table :proposals do |t|
       t.string :author
       t.text :abstract
 

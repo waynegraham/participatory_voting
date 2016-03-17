@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317180540) do
+ActiveRecord::Schema.define(version: 20160317181031) do
 
-  create_table "abstracts", force: :cascade do |t|
+  create_table "proposals", force: :cascade do |t|
     t.string   "author"
     t.text     "abstract"
     t.datetime "created_at",                            null: false
@@ -25,15 +25,17 @@ ActiveRecord::Schema.define(version: 20160317180540) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.string   "title"
   end
 
-  add_index "abstracts", ["cached_votes_down"], name: "index_abstracts_on_cached_votes_down"
-  add_index "abstracts", ["cached_votes_score"], name: "index_abstracts_on_cached_votes_score"
-  add_index "abstracts", ["cached_votes_total"], name: "index_abstracts_on_cached_votes_total"
-  add_index "abstracts", ["cached_votes_up"], name: "index_abstracts_on_cached_votes_up"
-  add_index "abstracts", ["cached_weighted_average"], name: "index_abstracts_on_cached_weighted_average"
-  add_index "abstracts", ["cached_weighted_score"], name: "index_abstracts_on_cached_weighted_score"
-  add_index "abstracts", ["cached_weighted_total"], name: "index_abstracts_on_cached_weighted_total"
+  add_index "proposals", ["cached_votes_down"], name: "index_proposals_on_cached_votes_down"
+  add_index "proposals", ["cached_votes_score"], name: "index_proposals_on_cached_votes_score"
+  add_index "proposals", ["cached_votes_total"], name: "index_proposals_on_cached_votes_total"
+  add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up"
+  add_index "proposals", ["cached_weighted_average"], name: "index_proposals_on_cached_weighted_average"
+  add_index "proposals", ["cached_weighted_score"], name: "index_proposals_on_cached_weighted_score"
+  add_index "proposals", ["cached_weighted_total"], name: "index_proposals_on_cached_weighted_total"
+  add_index "proposals", ["title"], name: "index_proposals_on_title"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

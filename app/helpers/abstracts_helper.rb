@@ -1,2 +1,2 @@
-module AbstractsHelper
+module ProposalsHelper
 end
