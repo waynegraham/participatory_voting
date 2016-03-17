@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   get 'proposals/index'
 
+  resources :proposals do
+    member do
+      put "like", to: "proposals#upvote"
+    end
+  end
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
