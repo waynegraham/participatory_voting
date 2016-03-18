@@ -3,10 +3,72 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Raleway:300,400,700,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Raleway:300,400,500,700);
 
 html {
   -webkit-font-smoothing: antialiased;
+}
+
+body,html{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin-top: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+#proposals {
+  h1 {
+    margin-top: 25px;
+    text-align: center;
+    color: #eb5055;
+    padding-bottom: .5em;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+}
+
+.btn-red {
+  position: relative;
+  color: #fff;
+  background:#eb5055;
+  font-family: 'Raleway', sans-serif;
+  font-size: .875em !important;
+  font-weight: 300;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 10px 30px;
+  display: inline-block;
+  margin: 10px 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  outline: none;
+  position: relative;
+  border: 1px solid #eb5055;
+  color: #eb5055;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    color: #fff;
+    background:#eb5055;
+  }
+
+  &:active {
+    color: #fff;
+    background:#eb5055;
+  }
 }
 
 .navbar-custom {
@@ -30,9 +92,6 @@ html {
     }
 }
 
-.title {
-  font-size: 24px;
-}
 
 // all images responsive by default
 img {
@@ -62,11 +121,26 @@ section {
   display:none;
 }
 
+.title {
+  font-size: 24px;
+  font-weight: 300;
+}
+
 .abstract {
-  background-color: #99ccff;
+  // background-color: #99ccff;
+  background-color: #fff;
   padding: 20px;
   margin-top: 10px;
-  border-bottom: 5px solid #3399ff;
+  border-bottom: 5px solid #666;
+  // border-bottom: 5px solid #3399ff;
+
+  font-size: 1.125em;
+  text-align: justify;
+
+  .bold {
+    font-weight: 700;
+  }
+
 }
 
 

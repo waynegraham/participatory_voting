@@ -1,6 +1,13 @@
 $(function() {
     console.log( "CLIR+DLF Rocks!" );
 
+    // this may be useful if this becomes "slow"
+    // $(window).load(function(){
+    //     $('#preloader').fadeOut('slow', function(){
+    //         $(this).remove();
+    //     });
+    // });
+
     $('.glyphicon-collapse-up').click(function(){
         $(this).toggleClass('glyphicon-collapse-up glyphicon-collapse-down', 400, "linear");
         $(this).parent().siblings('.abstract').slideToggle();

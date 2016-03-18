@@ -1,8 +1,8 @@
 <div class="row">
   <div class="container">
 
-    <div class="col-md-12">
-      <h1>DLF Proposals</h1>
+    <div id="proposals" class="col-md-12">
+      <h1>DLF Forum Proposals</h1>
       <% @proposals.each do |proposal| %>
 
       <div class="col-md-1">
@@ -21,6 +21,11 @@
 
       <div class="col-md-11">
         <div id="proposal-<%=proposal.id %>" class="proposal">
+          <!-- <h4><%= proposal.title %></h4>
+          <p>
+              <%= proposal.abstract.gsub(/", "/,' ').gsub(/\[\"/,'').gsub(/\"\]/,'') %>
+          </p> -->
+
           <p class="title">
             <span class="glyphicon glyphicon-collapse-up"></span>
             <%= proposal.title %>
