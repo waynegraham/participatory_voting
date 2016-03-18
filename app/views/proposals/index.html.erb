@@ -20,27 +20,29 @@
       </div>
 
       <div class="col-md-11">
-
         <div class="proposal">
           <p class="title">
             <span class="glyphicon glyphicon-collapse-up"></span>
-
             <%= proposal.title %>
-
-            <%= link_to like_proposal_path(proposal), method: :put do %>
-            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <% if(current_user.voted_for? proposal) %>
+            <%= link_to like_proposal_path(proposal), method: :put, class: 'btn btn-warning' do %>
+            Undo Vote
             <% end %>
-
-
+          <% else %>
+            <%= link_to like_proposal_path(proposal), method: :put, class: 'btn btn-info' do %>
+            Cast Vote
+            <% end %>
+            <% end %>
           </p>
           <p class="abstract">
             <!-- TODO: this is just for testing purposes -->
+            <span class="bold">Abstract</span><br/>
+
             <%= proposal.abstract.gsub(/", "/,' ').gsub(/\[\"/,'').gsub(/\"\]/,'') %>
           </p>
         </div>
       </div>
       <% end %>
-
+    </div>
   </div>
-</div>
 </div>
