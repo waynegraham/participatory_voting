@@ -3,7 +3,7 @@ class ProposalsController < ApplicationController
   before_action :authenticate_user!, only: [:upvote]
 
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.all.order(:title)
   end
 
   def upvote

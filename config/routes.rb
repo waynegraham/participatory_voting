@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     member do
       put "like", to: "proposals#upvote"
     end
-  end
+  end 
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

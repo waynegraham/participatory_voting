@@ -5,18 +5,17 @@
       <% @proposals.each do |proposal| %>
       <div class="proposal">
         <h3>
-          <span class="glyphicon glyphicon-collapse-down"></span>
+          <span class="glyphicon glyphicon-collapse-up"></span>
           <%= proposal.title %>
           <%= link_to like_proposal_path(proposal), method: :put do %>
           <span class="glyphicon glyphicon-thumbs-up"></span>
           <%= proposal.get_upvotes.size %>
           <% end %>
         </h3>
-
-        <p>
-          <!-- TODO: this is just for testing purposes -->
-          <%= proposal.abstract.gsub(/", "/,' ').gsub(/\[\"/,'').gsub(/\"\]/,'') %>
-        </p>
+          <p class="abstract">
+            <!-- TODO: this is just for testing purposes -->
+            <%= proposal.abstract.gsub(/", "/,' ').gsub(/\[\"/,'').gsub(/\"\]/,'') %>
+          </p>
       </div>
       <% end %>
     </div>

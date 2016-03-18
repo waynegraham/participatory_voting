@@ -27,3 +27,14 @@ section {
   @extend .row;
   margin-top: 20px;
 }
+
+.abstract {
+  display:none;
+}
+
+.abstract {
+  background-color: #99ccff;
+  padding: 20px;
+  margin-top: 10px;
+  border-bottom: 5px solid #3399ff;
+}
