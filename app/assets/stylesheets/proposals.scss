@@ -4,6 +4,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$green: #18bc9c;
+
+.green {
+  color: $green;
+}
+
+.title {
+  font-size: 24px;
+}
+
 // all images responsive by default
 img {
   @extend .img-responsive;
