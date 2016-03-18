@@ -3,11 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Raleway:300,400,700,500);
 
-$green: #18bc9c;
+html {
+  -webkit-font-smoothing: antialiased;
+}
 
-.green {
-  color: $green;
+.navbar-custom {
+  font: 'Roboto', sans-serif;
+    background-color: rgba(51,51,51,.6);
+    border:none;
+    border-radius: 0;
+    transition: background .3s ease-in;
+
+    a {
+      font-weight: 300;
+      color: #fff;
+      display: inline-block;
+      position: relative;
+      padding: 20px 10px;
+      transition: all .25s;
+    }
+
+    &:hover {
+      background: rgba(51, 51, 51, 1);
+    }
 }
 
 .title {
@@ -47,4 +67,24 @@ section {
   padding: 20px;
   margin-top: 10px;
   border-bottom: 5px solid #3399ff;
+}
+
+
+.to-top {
+  display: none;
+  background-color: #333;
+  width: 50px;
+  height: 50px;
+  color: #ccc;
+  position: fixed;
+  z-index: 10000;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all .2s;
+
+  &:hover {
+    color: #eb5055;
+  }
 }

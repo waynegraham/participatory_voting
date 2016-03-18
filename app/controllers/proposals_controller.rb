@@ -13,7 +13,8 @@ class ProposalsController < ApplicationController
     else
       @proposal.upvote_by current_user
     end
-    #TODO: ajax?
-    redirect_to :back
+    # redirect_to :back
+    div = "#proposal-#{@proposal.id}"
+    redirect_to(request.env["HTTP_REFERER"] + "#{div}")
   end
 end

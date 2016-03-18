@@ -8,7 +8,7 @@
 
 require 'ffaker'
 
-(1..10).each do |a|
+(1..100).each do |a|
   Proposal.create(
     author: FFaker::Name.name,
     title: FFaker::Movie.title,
