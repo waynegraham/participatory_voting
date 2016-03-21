@@ -6,7 +6,7 @@
       <% @proposals.each do |proposal| %>
 
       <div class="col-md-1">
-        <% if(current_user.voted_for? proposal) %>
+        <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
         <button class="btn btn-success" type="button">
           Votes
           <span class="badge"><%= proposal.get_upvotes.size %></span>
@@ -29,7 +29,7 @@
           <p class="title">
             <span class="glyphicon glyphicon-collapse-up"></span>
             <%= proposal.title %>
-            <% if(current_user.voted_for? proposal) %>
+            <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
             <%= link_to like_proposal_path(proposal), method: :put, class: 'btn btn-warning' do %>
             Undo Vote
             <% end %>
@@ -42,7 +42,6 @@
           <p class="abstract">
             <!-- TODO: this is just for testing purposes -->
             <span class="bold">Abstract</span><br/>
-
             <%= proposal.abstract.gsub(/", "/,' ').gsub(/\[\"/,'').gsub(/\"\]/,'') %>
           </p>
         </div>
