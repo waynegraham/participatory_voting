@@ -9,12 +9,12 @@
         <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
         <button class="btn btn-success" type="button">
           Votes
-          <span class="badge"><%= proposal.get_upvotes.size %></span>
+          <span class="badge"><%= proposal.cached_votes_total %></span>
         </button>
       <% else %>
         <button class="btn btn-primary" type="button">
           Votes
-          <span class="badge"><%= proposal.get_upvotes.size %></span>
+          <span class="badge"><%= proposal.cached_votes_total %></span>
         </button>
         <% end %>
       </div>
