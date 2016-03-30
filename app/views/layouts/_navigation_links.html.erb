@@ -1,1 +1,6 @@
 <li><%#= link_to 'About', page_path('about') %></li>
+<% if current_user %>
+<li>
+  Logged in as <%= current_user.email %>
+</li>
+<% end %>
