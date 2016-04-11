@@ -6,13 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'ffaker'
-
-(1..100).each do |a|
-  Proposal.create(
-    author: FFaker::Name.name,
-    title: FFaker::Movie.title,
-    abstract: FFaker::Lorem.words(50)
-  )
-
-end
+# require 'ffaker'
+#
+# (1..100).each do |a|
+#   Proposal.create(
+#     author: FFaker::Name.name,
+#     title: FFaker::Movie.title,
+#     abstract: FFaker::Lorem.words(50)
+#   )
+#
+# end
