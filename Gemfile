@@ -43,8 +43,6 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'puma'
 
 gem 'ffaker', '~> 2.2' # for generating fake seeds
-
-
 gem 'bootstrap-sass'
 
 

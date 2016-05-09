@@ -8,20 +8,7 @@
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
     </head>
-    <body>
-        <header>
-            <%= render 'layouts/header'%>
-        </header>
-
-        <main role="main">
-            <div id="top">
-                <%= render 'layouts/messages' %>
-            </div>
-            <%= yield %>
-        </main>
-
-        <footer class="section bg-gray">
-            <%= render 'layouts/footer' %>
-        </footer>
+    <body class="login-img-body" id="top">
+        <%= yield %>
     </body>
 </html>

@@ -16,6 +16,16 @@ body,html{
   font-family: 'Roboto', sans-serif;
 }
 
+.section {
+  // padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.bg-gray {
+  background-color:  #eef2f5;
+  border-bottom: 1px solid #e9e9e9;
+  border-top: 1px solid #e9e9e9;
+}
 
 .logo {
   font-weight: 700;
@@ -178,5 +188,59 @@ section {
 
   &:hover {
     color: #eb5055;
+  }
+}
+
+footer {
+  .footer-title {
+    margin: 0 0 22px;
+    padding-top: 21px;
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .footer-banner {
+    background-color: #34495e;
+    color: #fff;
+    margin-left: 42px;
+    min-height: 316px;
+    padding: 0 30px 30px;
+  }
+
+  h5 {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  a {
+    // color: #97a0af;
+		color: #00040c;
+    &:hover {
+      color: #0ccfa8;
+    }
+  }
+  ul li {
+    margin: 5px 0;
+  }
+  .footer-alt {
+    border-top: 1px solid rgba(151, 160, 175, 0.2);
+    margin-top: 30px;
+    padding-top: 20px;
+
+    .logo {
+      color: #97a0af !important;
+      margin-bottom: 0;
+      i {
+        margin-right: 5px;
+      }
+    }
   }
 }
