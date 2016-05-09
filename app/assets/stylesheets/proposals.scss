@@ -3,7 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Raleway:300,400,500,700);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Raleway:300,400,500,700|Crimson+Text);
+
+@import "fonts";
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -12,6 +15,21 @@ html {
 body,html{
   font-family: 'Roboto', sans-serif;
 }
+
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  color: #111 !important;
+  letter-spacing: 1px;
+}
+
+.dlf {
+	font-family: 'Crimson Text', sans-serif;
+	span { font-size: 24px; }
+}
+
+
 
 h1,h2,h3,h4,h5,h6{
   margin-top: 0;

@@ -1,11 +1,21 @@
 <div class="row">
   <div class="container">
-    <% cache @proposals do %>
+    <%# cache @proposals do %>
     <div id="proposals" class="col-md-12">
       <h1>DLF Forum Proposals</h1>
       <% @proposals.each do |proposal| %>
-        <% cache proposal do %>
-          <div class="col-md-1">
+        <%# cache proposal do %>
+          <div class="col-md-2">
+            <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
+              <%= link_to like_proposal_path(proposal), method: :put, class: 'btn btn-warning' do %>
+                Undo Vote
+              <% end %>
+            <% else %>
+              <%= link_to like_proposal_path(proposal), method: :put, class: 'btn btn-info' do %>
+                Cast Vote
+              <% end %>
+            <% end %>
+            <!--
             <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
               <button class="btn btn-success" type="button">
                 Votes
@@ -16,34 +26,25 @@
                 Votes
                 <span class="badge"><%= proposal.cached_votes_total %></span>
               </button>
-            <% end %>
+            <% end %>-->
           </div>
 
-          <div class="col-md-11">
+          <div class="col-md-10">
             <div id="proposal-<%=proposal.id %>" class="proposal">
               <p class="title">
-              <span class="glyphicon glyphicon-collapse-up"></span>
-              <%= proposal.title %>
-              <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
-                <%= link_to like_proposal_path(proposal), method: :put, class: 'btn btn-warning' do %>
-                  Undo Vote
-                <% end %>
-              <% else %>
-                <%= link_to like_proposal_path(proposal), method: :put, class: 'btn btn-info' do %>
-                  Cast Vote
-                <% end %>
-              <% end %>
+                <span class="glyphicon glyphicon-collapse-up"></span>
+                <%= proposal.title %>
               </p>
               <p class="abstract">
-              <!-- TODO: this is just for testing purposes -->
-              <span class="bold">Abstract</span><br/>
-              <%= proposal.abstract.gsub(/", "/,' ').gsub(/\[\"/,'').gsub(/\"\]/,'') %>
+                <!-- TODO: this is just for testing purposes -->
+                <span class="bold">Abstract</span><br/>
+                <%= proposal.abstract.gsub(/", "/,' ').gsub(/\[\"/,'').gsub(/\"\]/,'') %>
               </p>
             </div>
           </div>
-        <% end %>
+        <%# end %>
       <% end %>
     </div>
-    <% end %>
+    <%# end %>
   </div>
 </div>

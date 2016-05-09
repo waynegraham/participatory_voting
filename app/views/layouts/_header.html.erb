@@ -13,6 +13,13 @@
       <ul class="nav navbar-nav">
         <%= render 'layouts/navigation_links' %>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li>
+            Logged in as <%= current_user.email %>
+        </li>
+      <% end %>
+      </ul>
     </div>
   </div>
 </nav>
