@@ -1,4 +1,6 @@
 $(function() {
+    'use strict';
+
     console.log( "CLIR+DLF Rocks!" );
 
     // this may be useful if this becomes "slow"
@@ -7,6 +9,11 @@ $(function() {
     //         $(this).remove();
     //     });
     // });
+
+    $('.expand').click(function(){
+        $('.glyphicon-collapse-up').toggleClass('glyphicon-collapse-up glyphicon-collapse-down', 400, "linear");
+        $('.abstract').slideToggle();
+    });
 
     $('.glyphicon-collapse-up').click(function(){
         $(this).toggleClass('glyphicon-collapse-up glyphicon-collapse-down', 400, "linear");
