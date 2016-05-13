@@ -7,8 +7,19 @@
             <% proposals.each do |proposal| %>
             <div class="row">
                 <div class="col-md-2">
+
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3><%= proposal.cached_votes_total %></h3>
+                            <p>
+                                Votes
+                            </p>
+                        </div>
+                    </div>
+
                     <!-- <div class="vote_tally">
-                        <%= pluralize(proposal.cached_votes_total, 'Vote') %>
+
+                        <%#= pluralize(proposal.cached_votes_total, 'Vote') %>
                     </div> -->
 
                     <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>

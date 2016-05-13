@@ -171,17 +171,67 @@ section {
 
 }
 
-.vote_tally {
-  background: #85c614;
-  font-size: 24px;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  margin: 0;
-  padding: 8px 0;
-  color: #fff;
+// .vote_tally {
+//   background-color: #00a65a !important;
+//   font-size: 24px;
+//   width: 80px;
+//   height: 80px;
+//   text-align: center;
+//   margin: 0;
+//   padding: 8px 0;
+//   color: #fff;
+// }
+
+@media (max-width: 767px){
+  .small-box {
+    text-align: center;
+
+    .icon { display:none; }
+    p { font-size: 12px; }
+  }
 }
 
+.bg-green {
+  color: #fff !important;
+  background-color: #00a65a !important;
+}
+
+.bg-green-active {
+  background-color: #008d4c !important;
+}
+
+.small-box {
+  text-align: center;
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+  & > .inner {
+    padding: 10px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #f9f9f9;
+  }
+
+  h3, p {
+    z-index: 5px;
+  }
+
+  h3 {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    padding: 0;
+  }
+  p {
+    font-size: 15px;
+  }
+}
 
 .to-top {
   display: none;
