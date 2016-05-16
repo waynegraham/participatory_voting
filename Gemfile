@@ -44,6 +44,7 @@ gem 'puma'
 
 gem 'ffaker', '~> 2.2' # for generating fake seeds
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 
 
 group :development, :test do

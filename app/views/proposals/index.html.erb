@@ -1,8 +1,22 @@
 <div class="row">
     <div class="container">
         <div id="proposals" class="col-md-12">
+
+            <!-- <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#2016-dlf-forum" aria-controls="2016-dlf-forum" role="tab" data-toggle="tab">2016 DLF Forum</a></li>
+                <li role="presentation"><a href="#digital-preservation-2016" aria-controls="#digital-preservation-2016" role="tab" data-toggle="tab">Digital Preservation 2016</a></li>
+                <li role="presentation"><a href="#lac-preconference" aria-controls="#digital-preservation-2016" role="tab" data-toggle="tab">LAC Preconference</a></li>
+            </ul> -->
+
+            <ul id="section-nav" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#2016-dlf-forum" aria-controls="2016-dlf-forum" role="tab">2016 DLF Forum</a></li>
+                <li role="presentation"><a href="#digital-preservation-2016" aria-controls="#digital-preservation-2016" role="tab">Digital Preservation 2016</a></li>
+                <li role="presentation"><a href="#lac-preconference" aria-controls="#digital-preservation-2016" role="tab">LAC Preconference</a></li>
+            </ul>
+
             <% @proposals.group_by(&:contribution_type).each do |c_type, proposals| %>
-            <div class="<%= c_type.parameterize %>">
+            <!-- <div id="<%= c_type.parameterize %>" class="tab-pane fade"> -->
+            <div id="<%= c_type.parameterize %>">
             <h2><%= c_type %></h2>
             <% proposals.each do |proposal| %>
             <div class="row">
@@ -32,11 +46,12 @@
                 <div class="col-md-10">
                     <div id="proposal-<%=proposal.id %>" class="proposal">
                         <p class="title">
-                            <span class="glyphicon glyphicon-collapse-up"></span>
+                            <!-- <span class="glyphicon glyphicon-collapse-up"></span> -->
                             <%= proposal.title %>
-
                         </p>
                         <p class="format">
+
+                            <%= format_icon(proposal.contribution_format) %>
                             <%= proposal.contribution_format %>
                         </p>
                         <p class="abstract">

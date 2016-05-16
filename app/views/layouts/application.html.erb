@@ -16,9 +16,13 @@
         <main role="main">
             <div id="top">
                 <%= render 'layouts/messages' %>
-                <button class="expand">Expand all</button>
+                <!-- <button class="expand">Expand all</button> -->
             </div>
-            <%= yield %>
+
+            <div class="tab-content">
+                <%= yield %>
+            </div>
+
         </main>
 
         <footer class="section bg-gray">
