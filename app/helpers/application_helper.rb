@@ -16,6 +16,8 @@ module ApplicationHelper
       when 'Hands-on Workshop'
         # icon = 'hand-lizard-o'
         icon = 'hand-spock-o'
+      when 'Lightning Talk'
+        icon = 'lightbulb-o'
       when 'Lunchtime Working Session'
         icon = 'flask'
       else

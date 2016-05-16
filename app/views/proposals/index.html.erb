@@ -1,6 +1,53 @@
 <div class="row">
+    <% @proposals.group_by(&:contribution_type).each do |c_type, proposals| %>
+        <section id="<%= c_type.parameterize %>" class="section-header">
+            <div class="vertical-center">
+                <div class="container">
+                    <div class="col-sm-12">
+                        <h1 class="title"><%= c_type %></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <% proposals.each do |proposal| %>
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-12">
+                    <div id="proposal-<%=proposal.id %>" class="proposal">
+                        <p class="title">
+                            <!-- <span class="glyphicon glyphicon-collapse-up"></span> -->
+                            <%= proposal.title %>
+                        </p>
+                        <p class="format <%= proposal.contribution_format.parameterize %>">
+                            <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
+                                <%= link_to "Undo Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-warning'%>
+                            <% else %>
+                                <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-info' %>
+                            <% end %>
+                            <%= format_icon(proposal.contribution_format) %>
+                            <%= proposal.contribution_format %>
+
+
+                        </p>
+                        <p class="abstract">
+
+                            <span class="bold">Abstract</span><br/>
+                            <%= proposal.abstract %>
+
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+
+<!-- TODO: delete -->
+<!-- <div class="row">
     <div class="container">
-        <div id="proposals" class="col-md-12">
+        <div id="proposals" class="col-md-12"> -->
 
             <!-- <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#2016-dlf-forum" aria-controls="2016-dlf-forum" role="tab" data-toggle="tab">2016 DLF Forum</a></li>
@@ -8,18 +55,18 @@
                 <li role="presentation"><a href="#lac-preconference" aria-controls="#digital-preservation-2016" role="tab" data-toggle="tab">LAC Preconference</a></li>
             </ul> -->
 
-            <ul id="section-nav" class="nav nav-tabs" role="tablist">
+            <!-- <ul id="section-nav" class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#2016-dlf-forum" aria-controls="2016-dlf-forum" role="tab">2016 DLF Forum</a></li>
                 <li role="presentation"><a href="#digital-preservation-2016" aria-controls="#digital-preservation-2016" role="tab">Digital Preservation 2016</a></li>
                 <li role="presentation"><a href="#lac-preconference" aria-controls="#digital-preservation-2016" role="tab">LAC Preconference</a></li>
-            </ul>
+            </ul> -->
 
-            <% @proposals.group_by(&:contribution_type).each do |c_type, proposals| %>
+            <!-- <% @proposals.group_by(&:contribution_type).each do |c_type, proposals| %> -->
             <!-- <div id="<%= c_type.parameterize %>" class="tab-pane fade"> -->
-            <div id="<%= c_type.parameterize %>">
+            <!-- <div id="<%= c_type.parameterize %>">
             <h2><%= c_type %></h2>
             <% proposals.each do |proposal| %>
-            <div class="row">
+            <div class="row"> -->
                 <!-- <div class="col-md-2"> -->
 
                     <!-- <div class="small-box bg-green">
@@ -43,23 +90,23 @@
                     <% end %>
                 </div> -->
 
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                     <div id="proposal-<%=proposal.id %>" class="proposal">
                         <p class="title">
 
                             <!-- <span class="glyphicon glyphicon-collapse-up"></span> -->
-                            <%= proposal.title %>
-                        </p>
-                        <p class="format">
-                            <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
+                            <!-- <%= proposal.title %> -->
+                        <!-- </p> -->
+                        <!-- <p class="format"> -->
+                            <!-- <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
                                 <%= link_to "Undo Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-warning'%>
                             <% else %>
                                 <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-info' %>
                             <% end %>
                             <%= format_icon(proposal.contribution_format) %>
-                            <%= proposal.contribution_format %>
+                            <%= proposal.contribution_format %> -->
 
-
+<!--
                         </p>
                         <p class="abstract">
 
@@ -76,4 +123,4 @@
             <% end %>
         </div>
     </div>
-</div>
+</div> -->
