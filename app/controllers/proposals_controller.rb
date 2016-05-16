@@ -3,7 +3,10 @@ class ProposalsController < ApplicationController
   before_action :authenticate_user!, only: [:upvote]
 
   def index
-    @proposals = Proposal.all.order(:title)
+    seed_val = Proposal.connection.quote(cookies[:rand_seed])
+    Proposal.connection.execute("SELECT SETSEED(#{seed_val})")
+    # @proposals = Proposal.all.order(:title)
+    @proposals = Proposal.all.order('random()')
   end
 
   def upvote

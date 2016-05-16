@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
+  before_filter :set_rand_cookie
+
   protected
 
   def layout_by_resource
@@ -14,4 +16,12 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+
+  private
+
+  def set_rand_cookie
+    return if cookies[:rand_seed].present?
+    cookies[:rand_seed] = { value: rand, expires: Time.now + 900 }
+  end
+
 end

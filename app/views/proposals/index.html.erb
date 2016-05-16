@@ -20,7 +20,7 @@
             <h2><%= c_type %></h2>
             <% proposals.each do |proposal| %>
             <div class="row">
-                <div class="col-md-2">
+                <!-- <div class="col-md-2"> -->
 
                     <!-- <div class="small-box bg-green">
                         <div class="inner">
@@ -36,27 +36,36 @@
                         <%#= pluralize(proposal.cached_votes_total, 'Vote') %>
                     </div> -->
 
-                    <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
-                    <%= link_to "Undo Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-warning'%>
-                <% else %>
-                    <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-info' %>
+                    <!-- <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
+                        <%= link_to "Undo Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-warning'%>
+                    <% else %>
+                        <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-info' %>
                     <% end %>
-                </div>
+                </div> -->
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div id="proposal-<%=proposal.id %>" class="proposal">
                         <p class="title">
+
                             <!-- <span class="glyphicon glyphicon-collapse-up"></span> -->
                             <%= proposal.title %>
                         </p>
                         <p class="format">
-
+                            <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
+                                <%= link_to "Undo Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-warning'%>
+                            <% else %>
+                                <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-info' %>
+                            <% end %>
                             <%= format_icon(proposal.contribution_format) %>
                             <%= proposal.contribution_format %>
+
+
                         </p>
                         <p class="abstract">
+
                             <span class="bold">Abstract</span><br/>
                             <%= proposal.abstract %>
+
                         </p>
                     </div>
                 </div>
