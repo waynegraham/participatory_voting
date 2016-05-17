@@ -99,18 +99,9 @@ p {
     margin-right: 5px;
   }
 
-  &.snapshot {
-    color: $orange;
-  }
-
-  &.panel {
-    color: $green;
-  }
-
-  &.presentation {
-    color: #c12638;
-  }
-
+  &.snapshot { color: $orange; }
+  &.panel { color: $green; }
+  &.presentation { color: #c12638; }
   &.workshop { color: #ca553a; }
   &.talks-or-demos { color: #007aba; }
   &.hands-on-workshop { color: #00b2ed; }
