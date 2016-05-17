@@ -8,12 +8,23 @@ def latest_csv
   Dir.glob('./lib/assets/*.csv').max_by {|f| File.mtime(f)}
 end
 
+namespace :db do
+  namespace :heroku do
+    desc "Create a heroku database backup"
+    task :backup => :environment do
+      `heroku pg:backups capture`
+    end
+
+    desc "Download a heroku database backup"
+    task :download => :environment do
+      system("curl -o voting.dump `heroku pg:backups public-url`")
+    end
+  end
+end
+
 namespace :import do
   desc "Import CSV documents from ConfTool dump"
   task :conftool => :environment do
-    # NOTE: There is a bad header in the downloaded file;
-    # workaround is just to open it in Excel and remove the bad
-    # characters in the first column around "paperID"
     CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
       Proposal.find_or_create_by(id: row['paperID']) do |proposal|
         proposal.author              = row['authors'],
@@ -22,8 +33,13 @@ namespace :import do
         proposal.contribution_type   = row['contribution_type']
         proposal.contribution_format = row['contribution_format']
       end
-
     end
+  end
+end
 
+namespace :reset do
+  desc "Clean out the proposals, leave the people"
+  task :proposals => :environment do
+    Proposal.destroy_all
   end
 end
