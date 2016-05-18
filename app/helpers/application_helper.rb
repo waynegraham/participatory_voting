@@ -1,6 +1,8 @@
 module ApplicationHelper
   def format_icon(format)
     case format
+      when 'NDSA Working Group Meeting'
+        icon = 'users'
       when 'Presentation'
           icon = 'user'
       when 'Dork Shorts'

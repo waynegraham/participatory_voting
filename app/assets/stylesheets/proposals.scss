@@ -339,7 +339,8 @@ section {
   transition: all .2s;
 
   &:hover {
-    color: #eb5055;
+    // color: #eb5055;
+    color: $red;
   }
 }
 
