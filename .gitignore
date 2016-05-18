@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp
 node_modules/
+
+# Ignore database dump
+voting.dump
