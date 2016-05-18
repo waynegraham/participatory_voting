@@ -40,8 +40,14 @@ $blue: #337ab7;
     background: rgba(213,215,222,0.9);
 }
 .login-form a{
-    color: #688a7e !important;
+  color: #fff !important;
+    // color: #688a7e !important;
 }
+
+.remember-me {
+  padding-bottom: 24px;
+}
+
 .login-form h2.login-form-heading {
     margin: 0;
     padding:20px 15px;
@@ -94,14 +100,18 @@ $blue: #337ab7;
     border: none;
     border-radius: 0;
 }
-.login-form input[type="text"], .login-form input[type="password"] {
-    border: none;
-    box-shadow: none;
-    font-size: 16px;
-    border-radius: 0;
-}
+// .login-form input[type="text"], .login-form input[type="password"] {
+//     border: none;
+//     box-shadow: none;
+//     font-size: 16px;
+//     border-radius: 0;
+// }
 .login-form .btn{
     border-radius: 0;
+}
+
+.text-white {
+  color: #fff;
 }
 .login-form .btn-login {
     background: #f67a6e;
@@ -123,7 +133,7 @@ $blue: #337ab7;
     color: #34aadc;
 }
 .login-form a {
-    color: #b6b6b6;
+    // color: #b6b6b6;
 }
 
 .login-form a:hover {

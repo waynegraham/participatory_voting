@@ -9,20 +9,15 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <!-- <header>
-            <%#= render 'layouts/header'%>
-        </header> -->
+        <header>
+            <%= render 'layouts/login'%>
+        </header>
 
         <main role="main">
-            <div id="top">
-                <%= render 'layouts/messages' %>
-                <!-- <button class="expand">Expand all</button> -->
-            </div>
-
+            <div id="top"></div>
             <%= render 'layouts/nav_section' %>
-
+            <%= render 'layouts/messages' %>
             <%= yield %>
-
         </main>
 
         <footer class="section bg-gray">
