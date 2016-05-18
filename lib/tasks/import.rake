@@ -12,12 +12,15 @@ namespace :db do
   namespace :heroku do
     desc "Create a heroku database backup"
     task :backup => :environment do
+      puts "Creating a snapshot of the database on heroku"
       `heroku pg:backups capture`
     end
 
     desc "Download a heroku database backup"
     task :download => :environment do
-      system("curl -o voting.dump `heroku pg:backups public-url`")
+      puts "Downloading the latest database snapshot"
+      system("curl -o voting-#{Time.now.strftime('%Y-%m-%d_%H-%M-%S')}.dump `heroku pg:backups public-url`")
+      puts "\n See https://devcenter.heroku.com/articles/heroku-postgres-backups#restoring-backups for restoring database"
     end
   end
 end
@@ -35,11 +38,13 @@ namespace :import do
       end
     end
   end
+
+
 end
 
 namespace :reset do
   desc "Clean out the proposals, leave the people"
-  task :proposals => :environment do
+  task :proposals => [:environment, "db:heroku:backup", "db:heroku:download" ] do
     Proposal.destroy_all
   end
 end

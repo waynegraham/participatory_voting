@@ -18,4 +18,4 @@
 node_modules/
 
 # Ignore database dump
-voting.dump
+voting*.dump
