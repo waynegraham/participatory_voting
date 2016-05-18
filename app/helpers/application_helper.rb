@@ -3,6 +3,8 @@ module ApplicationHelper
     case format
       when 'Presentation'
           icon = 'user'
+      when 'Dork Shorts'
+          icon = 'hand-spock-o'
       when 'Snapshot'
         icon = 'camera'
       when 'Workshop'
@@ -14,10 +16,11 @@ module ApplicationHelper
       when 'Poster'
         icon = 'map-o'
       when 'Hands-on Workshop'
-        # icon = 'hand-lizard-o'
-        icon = 'hand-spock-o'
+        icon = 'hand-lizard-o'
+        # icon = 'hand-spock-o'
       when 'Lightning Talk'
-        icon = 'lightbulb-o'
+        # icon = 'lightbulb-o'
+        icon = 'bolt'
       when 'Lunchtime Working Session'
         icon = 'flask'
       else
