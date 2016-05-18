@@ -9,15 +9,17 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <header>
-            <%= render 'layouts/header'%>
-        </header>
+        <!-- <header>
+            <%#= render 'layouts/header'%>
+        </header> -->
 
         <main role="main">
             <div id="top">
                 <%= render 'layouts/messages' %>
                 <!-- <button class="expand">Expand all</button> -->
             </div>
+
+            <%= render 'layouts/nav_section' %>
 
             <%= yield %>
 
@@ -26,5 +28,8 @@
         <footer class="section bg-gray">
             <%= render 'layouts/footer' %>
         </footer>
+        <button class="to-top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
     </body>
 </html>

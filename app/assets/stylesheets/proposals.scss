@@ -4,7 +4,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 @import "fonts";
 
 $green:    #6c825f;
@@ -70,6 +69,43 @@ p {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   line-height: 1.5em;
+}
+
+// Top naviation
+#conferences {
+  padding: 50px 0;
+  color: #fff;
+
+  h3 {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .media {
+    cursor: pointer;
+  }
+}
+
+#conferences .media:hover .icon-md {
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.icon-md {
+  font-size: 36px;
+  height: 68px;
+  width: 68px;
+  line-height: 68px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.4);
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+  transition: 500ms;
+}
+
+.emerald {
+  background-color: #1bbc9b;
 }
 
 #proposals {
@@ -192,7 +228,7 @@ main {
 
 section {
   @extend .row;
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 
 .abstract {
@@ -216,7 +252,7 @@ section {
   // border-bottom: 5px solid #3399ff;
 
   font-size: 1.125em;
-  text-align: justify;
+  // text-align: justify;
 
   .bold {
     font-weight: 700;
@@ -327,6 +363,7 @@ footer {
     margin-left: 42px;
     min-height: 316px;
     padding: 0 30px 30px;
+    a {color: #fff;}
   }
 
   h5 {
@@ -339,8 +376,10 @@ footer {
   a {
     // color: #97a0af;
 		color: #00040c;
+    // color: #fff;
     &:hover {
-      color: #0ccfa8;
+      // color: #0ccfa8;
+      text-decoration: underline;
     }
   }
   ul li {
