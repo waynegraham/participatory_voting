@@ -92,7 +92,15 @@ p {
 
 #conferences .media:hover .icon-md {
   border-radius: 10px;
-  background-color: rgba(0,0,0,0.8);
+  // background-color: rgba(0,0,0,0.8);
+  background-color: rgb(255,255,255);
+  color: $blue-ish;
+}
+
+p.bumper {
+  font-size: 18px;
+  margin-bottom: 0;
+  font-weight: 300;
 }
 
 .icon-md {
@@ -108,8 +116,9 @@ p {
   transition: 500ms;
 }
 
-.emerald {
-  background-color: #1bbc9b;
+.blue {
+  // background-color: #1bbc9b;
+  background: #1977ba;
 }
 
 #proposals {
