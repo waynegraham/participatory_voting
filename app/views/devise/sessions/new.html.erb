@@ -26,7 +26,7 @@
               </div>
               <% end -%>
               </div>
-              <%= f.submit "Sign In", class: "btn btn-primary btn-lg btn-block" %>
+              <%= f.submit "Sign In", id: 'login-btn' class: "btn btn-primary btn-lg btn-block" %>
 
               <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-info btn-lg btn-block' %>
               <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'btn btn-success btn-lg btn-block' %>
