@@ -46,11 +46,11 @@ gem 'ffaker', '~> 2.2' # for generating fake seeds
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rails_layout'
+  gem 'bullet'
 end
 
 group :development do
