@@ -1,4 +1,4 @@
-<%# cache do %>
+<% cache do %>
 <div class="row">
     <% @proposals.group_by(&:contribution_type).each do |c_type, proposals| %>
         <section id="<%= c_type.parameterize %>" class="section-header">
@@ -23,13 +23,13 @@
                             <%= proposal.title %>
                         </p>
                         <p class="format <%= proposal.contribution_format.parameterize %>">
-                            <%# cache(proposal) do %>
+                            <% cache(proposal) do %>
                                 <% if( !current_user.nil? && (current_user.voted_for? proposal)) %>
                                     <%= link_to "Undo Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-warning'%>
                                 <% else %>
                                     <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, class: 'btn btn-info' %>
                                 <% end %>
-                            <%# end %>
+                            <% end %>
                             <%= format_icon(proposal.contribution_format) %>
                             <%= proposal.contribution_format %>
                         </p>
@@ -47,4 +47,4 @@
         <% end %>
     <% end %>
 </div>
-<% #end %>
+<% end %>
