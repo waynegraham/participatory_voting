@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= content_for?(:title) ? yield(:title) : "Participatory Voting" %></title>
-        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : " Community Voting Platform" %>">
+        <title><%= content_for?(:title) ? yield(:title) : "DLF Community Voting Platform" %></title>
+        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "DLF Community Voting Platform" %>">
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
@@ -28,7 +28,7 @@
             <%= yield %>
         </main>
 
-        <footer class="section bg-gray">
+        <footer class="bg-gray">
             <%= render 'layouts/footer' %>
         </footer>
         <button class="to-top">

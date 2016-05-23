@@ -13,19 +13,10 @@
       <%= link_to "https://ndsa.org", class: 'navbar-brand logo ndsa' do %>
         <i class="icon-ndsa_logo blue"></i><span>NDSA</span>
       <% end %>
-      <%#= link_to 'Home', root_path, class: 'navbar-brand' %>
     </div>
     <div class="collapse navbar-collapse">
       <ul id="section-nav" class="nav navbar-nav navbar-right">
         <%= render 'layouts/navigation_links' %>
-      </ul>
-      <!-- <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-          <li>
-            Logged in as <%= current_user.email %><br />
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-        </li>
-      <% end %> -->
       </ul>
     </div>
   </div>

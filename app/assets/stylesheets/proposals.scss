@@ -365,6 +365,12 @@ footer {
     line-height: 40px;
   }
 
+  .link-underscores {
+    a {
+      text-decoration: underline;
+    }
+  }
+
   p {
     font-size: 15px;
     line-height: 20px;
