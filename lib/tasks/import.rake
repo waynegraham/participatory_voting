@@ -29,6 +29,7 @@ namespace :import do
   desc "Import CSV documents from ConfTool dump"
   task :conftool => :environment do
     CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
+      puts "Adding #{row['title']}"
       Proposal.find_or_create_by(id: row['paperID']) do |proposal|
         proposal.author              = row['authors'],
         proposal.title               = row['title'],
