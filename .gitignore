@@ -19,3 +19,4 @@ node_modules/
 
 # Ignore database dump
 voting*.dump
+report.csv
