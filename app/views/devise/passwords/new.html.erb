@@ -1,0 +1,21 @@
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'login-form' }) do |f| %>
+
+  <div class="login-wrap">
+      <p class="login-img white">
+          <i class="icon-dlf-logo"></i> <span class="dlf">DLF</span>
+      </p>
+
+      <div class="input-group">
+          <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i>
+          </span>
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email Address' %>
+      </div>
+
+      <%= f.submit "Reset My Password", class: "btn btn-primary btn-lg btn-block" %>
+
+  </div>
+
+  <% end %>
+</div>
