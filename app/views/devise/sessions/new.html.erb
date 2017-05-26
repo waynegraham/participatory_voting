@@ -1,5 +1,6 @@
 <div class="container">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'login-form'}) do |f| %>
+  <%= devise_error_messages! %>
     <!-- <form class="login-form" action="index.html"> -->
         <div class="login-wrap">
             <p class="login-img white">
