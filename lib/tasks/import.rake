@@ -19,7 +19,8 @@ namespace :db do
     desc "Download a heroku database backup"
     task :download => :environment do
       puts "Downloading the latest database snapshot"
-      system("curl -o voting-#{Time.now.strftime('%Y-%m-%d_%H-%M-%S')}.dump `heroku pg:backups public-url`")
+      # system("curl -o voting-#{Time.now.strftime('%Y-%m-%d_%H-%M-%S')}.dump #{url}")
+      puts "Run the following command: \nheroku pg:backups:download"
       puts "\n See https://devcenter.heroku.com/articles/heroku-postgres-backups#restoring-backups for restoring database"
     end
   end
