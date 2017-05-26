@@ -68,6 +68,12 @@ $ git commit -am "message about what you just did"
 $ git push
 ```
 
+Running the server:
+
+```
+$ rails s
+```
+
 Deploy
 
 ```
