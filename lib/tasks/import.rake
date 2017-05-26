@@ -38,6 +38,9 @@ namespace :import do
   desc "Import CSV documents from ConfTool dump"
   task :conftool => :environment do
     CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
+
+      contribution_type_ignore = ['LAC Preconference']
+
       puts "Adding #{row['title']}"
       Proposal.find_or_create_by(id: row['paperID']) do |proposal|
         proposal.author              = row['authors'],
@@ -45,7 +48,7 @@ namespace :import do
         proposal.abstract            = row['abstract'],
         proposal.contribution_type   = row['contribution_type']
         proposal.contribution_format = row['contribution_format']
-      end
+      end unless contribution_type_ignore.include? row['contribution_type']
     end
   end
 

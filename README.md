@@ -13,6 +13,14 @@ This will download an Excel spreadsheet that you need to open in LibreOffice (th
 
 No need to delete any old files; the `rake` task uses the most recently modified file.
 
+## Ignore Contribution Types
+
+In the `lib/tasks/import.rake`, there is a task to add a `Prosal` to the database. There is an ignore list that you can simply place the strings used in ConfTool to ignore.
+
+```
+contribution_type_ignore = ['LAC Preconference']
+```
+
 ## RVM
 
 * Install [RVM](https://rvm.io/)
