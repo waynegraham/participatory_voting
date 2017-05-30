@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
-  get 'proposals/index'
-
-  resources :proposals do
-    member do
-      put "like", to: "proposals#upvote"
-      patch "like", to: "proposals#upvote"
-    end
-  end
-
-  get "/pages/*page" => "pages#show"
-
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get 'proposals/index'
 
+    resources :proposals do
+      member do
+        put "like", to: "proposals#upvote"
+        patch "like", to: "proposals#upvote"
+      end
+    end
+
+    get "/pages/*page" => "pages#show"
+
+    devise_for :users
   # You can have the root of your site routed with "root"
-
+  # root 'welcome#index'
   root 'proposals#index'
-  # root "pages#show", page: "home"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
