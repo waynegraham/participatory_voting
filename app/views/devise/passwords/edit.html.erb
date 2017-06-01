@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'login-form' }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
   <div class="login-wrap">
@@ -9,34 +9,19 @@
 
       <div class="input-group">
           <span class="input-group-addon">
-              <i class="glyphicon glyphicon-user"></i>
+              <i class="glyphicon glyphicon-lock"></i>
           </span>
-          <h2>Change your password</h2>
-          <div class="input-group">
-              <span class="input-group-addon">
-                  <i class="glyphicon glyphicon-lock"></i>
-              </span>
-              <%= f.password_field :password, class: 'form-control', placeholder: 'New Password', autocomplete: "off" %>
-          </div>
+          <%= f.password_field :password, class: 'form-control', autofocus: true, autocomplete: "off", placeholder: 'New Password' %>
       </div>
-
       <div class="input-group">
           <span class="input-group-addon">
-              <i class="glyphicon glyphicon-user"></i>
+              <i class="glyphicon glyphicon-lock"></i>
           </span>
-          <h2>Confirm your password</h2>
-          <div class="input-group">
-              <span class="input-group-addon">
-                  <i class="glyphicon glyphicon-lock"></i>
-              </span>
-              <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password', autocomplete: "off" %>
-          </div>
-          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email Address' %>
+          <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off", placeholder: 'Confirm Password' %>
       </div>
+    </div>
 
-      <%= f.submit "Change My Password", class: "btn btn-primary btn-lg btn-block" %>
-
-  </div>
+    <%= f.submit "Change my password", id: 'login-btn', class: "btn btn-primary btn-lg btn-block" %>
 
   <% end %>
 </div>
