@@ -42,6 +42,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
 gem 'puma'
+gem "puma_worker_killer" # for killing extra puma processes in production
 
 gem 'ffaker', '~> 2.2' # for generating fake seeds
 gem 'bootstrap-sass'

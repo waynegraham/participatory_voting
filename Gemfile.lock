@@ -71,6 +71,7 @@ GEM
     ffaker (2.5.0)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    get_process_mem (0.2.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
@@ -98,6 +99,9 @@ GEM
     orm_adapter (0.5.0)
     pg (0.20.0)
     puma (3.8.2)
+    puma_worker_killer (0.1.0)
+      get_process_mem (~> 0.2)
+      puma (>= 2.7, < 4)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -192,6 +196,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   puma
+  puma_worker_killer
   rails (~> 4.2.5)
   rails_12factor
   rails_layout
