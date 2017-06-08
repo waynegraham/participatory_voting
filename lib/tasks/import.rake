@@ -23,7 +23,16 @@ namespace :db do
       puts "Run the following command: \nheroku pg:backups:download"
       puts "\n See https://devcenter.heroku.com/articles/heroku-postgres-backups#restoring-backups for restoring database"
     end
+
+    desc "Download and restore the production database locally"
+    task :local_restore => :environment do
+      `heroku pg:backups capture`
+      `heroku pg:backups:download`
+      `pg_restore --verbose --clean --no-acl --no-owner -h localhost -d voting_development latest.dump`
+    end
   end
+
+
 end
 
 namespace :report do
