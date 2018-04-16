@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  before_filter :set_rand_cookie
+  before_action :set_rand_cookie
 
   protected
 
