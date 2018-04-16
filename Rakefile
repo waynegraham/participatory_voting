@@ -14,3 +14,13 @@ rescue LoadError
     raise 'Unable to load rubocop'
   end
 end
+
+# remove default rspec task
+task(:default).clear
+
+task default: :ci
+
+task ci: [:rubocop] do
+  ENV['environment'] = 'test'
+  Rake::Task['spec'].invoke
+end

@@ -1,24 +1,25 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Proposal, type: :model do
-
-  it "is valid with valid attributes" do
+  it 'is valid with valid attributes' do
     proposal = create(:proposal)
     expect(proposal).to be_valid
   end
 
-  it "is not valid without a title" do
+  it 'is not valid without a title' do
     proposal = build(:proposal, title: nil)
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
-  it "is not valid without an abstract" do
+  it 'is not valid without an abstract' do
     proposal = build(:proposal, abstract: nil)
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 
-  it "is not valid without an author" do
+  it 'is not valid without an author' do
     proposal = build(:proposal, author: nil)
-    expect(proposal).to_not be_valid
+    expect(proposal).not_to be_valid
   end
 end
