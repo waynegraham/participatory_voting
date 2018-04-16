@@ -1,5 +1,7 @@
 # Participatory Voting
 
+[![Build Status](https://travis-ci.org/clirdlf/participatory_voting.svg?branch=master)](https://travis-ci.org/clirdlf/participatory_voting)
+
 ## ConfTool Notes
 
 To get the download for this, navigate to **Data Import and Export** on the **Overview** screen. Click on **Export Data** and select the following:
