@@ -22,6 +22,7 @@ gem 'puma'
 gem 'puma_worker_killer'
 gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 5.0'
+gem 'simplecov', require: false, group: :test
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
@@ -30,6 +31,7 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rails-controller-testing'
   gem 'rails_layout'
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop'

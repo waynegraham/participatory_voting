@@ -84,11 +84,10 @@ Running the server:
 $ rails s
 ```
 
-Deploy
+## Deploy
 
-```
-$ git push heroku
-```
+This project is set up to auto-deploy after tests pass on [travis](https://travis-ci.org/clirdlf/participatory_voting). 
+
 
 ## Converting the file
 
