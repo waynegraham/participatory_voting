@@ -48,10 +48,11 @@ namespace :import do
   task :conftool => :environment do
     CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
 
-      contribution_type_ignore = ['LAC Preconference']
+      # contribution_type_ignore = ['LAC Preconference']
+      contribution_type_ignore = ['']
 
       puts "Adding #{row['title']}"
-      Proposal.find_or_create_by(id: row['paperID']) do |proposal|
+      Proposal.find_or_create_by!(id: row['paperID']) do |proposal|
         proposal.author              = row['authors'],
         proposal.title               = row['title'],
         proposal.abstract            = row['abstract'],
