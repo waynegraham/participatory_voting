@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -5,12 +7,12 @@ Rails.application.routes.draw do
 
   resources :proposals do
     member do
-      put "like", to: "proposals#upvote"
-      patch "like", to: "proposals#upvote"
+      put 'like', to: 'proposals#upvote'
+      patch 'like', to: 'proposals#upvote'
     end
   end
 
-  get "/pages/*page" => "pages#show"
+  get '/pages/*page' => 'pages#show'
 
   devise_for :users
 

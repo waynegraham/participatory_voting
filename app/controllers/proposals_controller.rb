@@ -1,5 +1,6 @@
-class ProposalsController < ApplicationController
+# frozen_string_literal: true
 
+class ProposalsController < ApplicationController
   before_action :authenticate_user!, only: [:upvote]
 
   def index
@@ -11,7 +12,7 @@ class ProposalsController < ApplicationController
 
   def upvote
     @proposal = Proposal.find(params[:id])
-    if(current_user.voted_for? @proposal)
+    if current_user.voted_for? @proposal
       @proposal.unvote_by current_user
     else
       @proposal.upvote_by current_user
@@ -19,6 +20,6 @@ class ProposalsController < ApplicationController
     # expire_fragment(@proposal)
     # redirect_to :back
     div = "#proposal-#{@proposal.id}"
-    redirect_to(request.env["HTTP_REFERER"] + "#{div}")
+    redirect_to(request.env['HTTP_REFERER'] + div.to_s)
   end
 end

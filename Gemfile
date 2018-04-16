@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '2.5.1'
@@ -8,8 +10,8 @@ gem 'rails', '~>5.2.0'
 # gem 'sqlite3', group: :development
 gem 'pg'
 
-gem 'rails_12factor', group: :production
 gem 'newrelic_rpm', group: :production
+gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -33,39 +35,33 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 
 gem 'puma'
-gem "puma_worker_killer" # for killing extra puma processes in production
+gem 'puma_worker_killer'
 
-gem 'ffaker', '~> 2.2' # for generating fake seeds
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'rails_layout'
   gem 'bullet'
+  gem 'byebug'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails_layout'
+  gem 'rspec-rails', '~> 3.7'
+
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '~> 2.0'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  # gem 'heroku'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

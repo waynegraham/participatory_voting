@@ -1,33 +1,35 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def format_icon(format)
-    case format
-      when 'NDSA Working Group Meeting'
-        icon = 'users'
-      when 'Presentation'
-          icon = 'user'
-      when 'Dork Shorts'
-          icon = 'hand-spock-o'
-      when 'Snapshot'
-        icon = 'camera'
-      when 'Workshop'
-        icon = 'map-pin'
-      when 'Panel'
-        icon = 'users'
-      when 'Talks or Demos'
-        icon = 'desktop'
-      when 'Poster'
-        icon = 'map-o'
-      when 'Hands-on Workshop'
-        icon = 'hand-lizard-o'
-        # icon = 'hand-spock-o'
-      when 'Lightning Talk'
-        # icon = 'lightbulb-o'
-        icon = 'bolt'
-      when 'Lunchtime Working Session'
-        icon = 'flask'
-      else
-        icon = ""
-    end
+    icon = case format
+           when 'NDSA Working Group Meeting'
+             'users'
+           when 'Presentation'
+             'user'
+           when 'Dork Shorts'
+             'hand-spock-o'
+           when 'Snapshot'
+             'camera'
+           when 'Workshop'
+             'map-pin'
+           when 'Panel'
+             'users'
+           when 'Talks or Demos'
+             'desktop'
+           when 'Poster'
+             'map-o'
+           when 'Hands-on Workshop'
+             'hand-lizard-o'
+           # icon = 'hand-spock-o'
+           when 'Lightning Talk'
+             # icon = 'lightbulb-o'
+             'bolt'
+           when 'Lunchtime Working Session'
+             'flask'
+           else
+             ''
+           end
 
     "<span class='fa fa-#{icon}' aria-hidden='true'></span>".html_safe
   end
