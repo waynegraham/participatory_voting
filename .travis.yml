@@ -6,6 +6,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 before_install:
   - gem update --system
+  - gem install bundler
   - psql -c 'create database hidden_collections_test;' -U postgres
   - bundle install
   - bundle exec rake db:test:prepare
