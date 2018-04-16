@@ -15,7 +15,7 @@ No need to delete any old files; the `rake` task uses the most recently modified
 
 ## Ignore Contribution Types
 
-In the `lib/tasks/import.rake`, there is a task to add a `Prosal` to the database. There is an ignore list that you can simply place the strings used in ConfTool to ignore.
+In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the database. There is an ignore list that you can simply place the strings used in ConfTool to ignore.
 
 ```
 contribution_type_ignore = ['LAC Preconference']
@@ -26,7 +26,7 @@ contribution_type_ignore = ['LAC Preconference']
 * Install [RVM](https://rvm.io/)
 
 ```
-$ rvm install 2.3.1
+$ rvm install 2.5.1
 ```
 
 ## Project Setup
@@ -44,7 +44,7 @@ $ rake import:conftool
 
 ## Postgresql
 
-This system uses Postgresql for it's database backend.
+This system uses PostgreSQQ for it's database backend.
 
 To start the service:
 
