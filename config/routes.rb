@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'proposals/index'
-  
+
   resources :proposals do
     member do
       put "like", to: "proposals#upvote"
@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root "pages#show", page: "home"
+  root 'proposals#index'
+  # root "pages#show", page: "home"
 end
