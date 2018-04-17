@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe ProposalsController, type: :controller do
+  include Devise::Test::ControllerHelpers
+
   describe 'GET index' do
     it 'has a 200 status code' do
       get :index
@@ -19,9 +21,9 @@ RSpec.describe ProposalsController, type: :controller do
   describe 'POST #upvote' do
     let(:proposal) { create :proposal }
 
-    # it 'requires login' do
-    #   put :upvote, params: { id: proposal.id }
-    #   expect(reponse).to redirect_to(proposal)
-    # end
+    it 'requires login' do
+      put :upvote, params: { id: proposal.id }
+      expect(response).to redirect_to('/users/sign_in')
+    end
   end
 end
