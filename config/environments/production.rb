@@ -15,6 +15,12 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
+  # See https://github.com/RailsApps/rails-devise/blob/master/config/environments/production.rb
+  config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
