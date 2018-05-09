@@ -94,9 +94,6 @@ $ rails s
 
 This project is set up to auto-deploy after tests pass on [travis](https://travis-ci.org/clirdlf/participatory_voting).
 
-
-
-
 ## Seeding the data
 
 Run the `import:conftool` task in the terminal. If you want to clear out the data first, run `rake reset`, but the `import:conftool` task *should* be idempotent and update any changes detected in the spreadsheet.
