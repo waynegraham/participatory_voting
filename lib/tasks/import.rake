@@ -46,10 +46,16 @@ end
 namespace :import do
   desc 'Import CSV documents from ConfTool dump'
   task conftool: :environment do
-    CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
-      # contribution_type_ignore = ['LAC Preconference']
-      contribution_type_ignore = ['']
+    # contribution_type_ignore = ['LAC Preconference']
+    contribution_type_ignore = ['']
 
+    contribution_order = [
+      'Learn@DLF',
+      '2018 DLF Forum',
+      'Digital Preservation 2018'
+    ]
+
+    CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
       puts "Adding #{row['title']}"
       unless contribution_type_ignore.include? row['contribution_type']
         Proposal.find_or_create_by!(id: row['paperID']) do |proposal|
@@ -58,6 +64,8 @@ namespace :import do
                                          proposal.abstract            = row['abstract'],
                                          proposal.contribution_type   = row['contribution_type']
           proposal.contribution_format = row['contribution_format']
+
+          proposal.order = contribution_order.index(row['contribution_type'])
         end
       end
     end

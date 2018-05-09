@@ -15,6 +15,12 @@ This will download an Excel spreadsheet that you need to open in LibreOffice (th
 
 No need to delete any old files; the `rake` task uses the most recently modified file.
 
+> **Note**: Use [LibreOffice](https://www.libreoffice.org/) to save the Excel spreadsheet as a CSV.
+
+## Setting Display Order
+
+Open `lib/tasks/import.rake` and search for the `contribution_order` (around line 52). Set these values from the `contribution_type` field from the CSV in the order you want them displayed.
+
 ## Ignore Contribution Types
 
 In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the database. There is an ignore list that you can simply place the strings used in ConfTool to ignore.
@@ -86,12 +92,10 @@ $ rails s
 
 ## Deploy
 
-This project is set up to auto-deploy after tests pass on [travis](https://travis-ci.org/clirdlf/participatory_voting). 
+This project is set up to auto-deploy after tests pass on [travis](https://travis-ci.org/clirdlf/participatory_voting).
 
 
-## Converting the file
 
-Use [LibreOffice](https://www.libreoffice.org/) to save the Excel spreadsheet as a CSV.
 
 ## Seeding the data
 
