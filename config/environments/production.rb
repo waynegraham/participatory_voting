@@ -5,15 +5,15 @@ Rails.application.configure do
 
   # For sending emails for password recovery
   # See https://devcenter.heroku.com/articles/sendgrid#ruby
-  # ActionMailer::Base.smtp_settings = {
-  #   :user_name => ENV['SENDGRID_USERNAME'],
-  #   :password => ENV['SENDGRID_PASSWORD'],
-  #   :domain => 'dlf-voting-app.herokuapp.com',
-  #   :address => 'smtp.sendgrid.net',
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :enable_starttls_auto => true
-  # }
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'dlf-voting-app.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # See https://github.com/RailsApps/rails-devise/blob/master/config/environments/production.rb
   config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
