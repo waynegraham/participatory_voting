@@ -16,6 +16,7 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'lograge', group: :production
 gem 'newrelic_rpm', group: :production
 gem 'pg'
 gem 'puma'

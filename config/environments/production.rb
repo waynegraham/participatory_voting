@@ -3,6 +3,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Use lograge to disable logging everything by default
+  # https://github.com/roidrage/lograge
+  config.lograge.enabled = true
+
   # See https://github.com/RailsApps/rails-devise/blob/master/config/environments/production.rb
   # and https://2017doneright.com/email-verification-devise-in-rails-using-sendgrid-gmail-and-heroku-a0ca930c5373
   config.action_mailer.default_url_options = { host: Rails.application.secrets.domain_name }
