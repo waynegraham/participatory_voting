@@ -101,3 +101,16 @@ Run the `import:conftool` task in the terminal. If you want to clear out the dat
 # Other Notes
 
 - [Sendgrid SPF Records](https://sendgrid.com/docs/Glossary/spf.html)
+
+# Database
+
+The database for this on Heroku has a limit of 10,000 records in the default deployment. However, the votes pushed us past this limit this year (2018). I had to run the following to move the database in to a paid plan:
+
+From https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases
+
+```
+heroku maintenance:on
+heroku pg:copy DATABASE_URL HEROKU_POSTGRESQL_BLUE_URL
+heroku pg:promote HEROKU_POSTGRESQL_BLUE_URL
+heroku maintenance:off
+```
