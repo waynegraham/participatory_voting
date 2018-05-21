@@ -38,7 +38,7 @@ end
 namespace :report do
   desc 'Generate report for voting; see https://gist.github.com/waynegraham/664a8d627168d51cea71836c6a20a060 for special sauce'
   task generate: :environment do
-    ActiveRecord::Base.establish_connection('development')
+    # ActiveRecord::Base.establish_connection('development')
     ActiveRecord::Base.connection.execute("COPY (SELECT title, cached_votes_total, contribution_type FROM proposals ORDER BY contribution_type, cached_votes_total DESC) TO '#{Rails.root.join('report.csv')}' WITH CSV DELIMITER ',';")
   end
 end
