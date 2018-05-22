@@ -52,7 +52,7 @@ $ rake import:conftool
 
 ## Postgresql
 
-This system uses PostgreSQQ for it's database backend.
+This system uses PostgreSQL for it's database backend.
 
 To start the service:
 
