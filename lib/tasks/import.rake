@@ -28,6 +28,7 @@ namespace :db do
 
     desc 'Download and restore the production database locally'
     task local_restore: :environment do
+      `rm latest.dump*`
       `heroku pg:backups capture`
       `heroku pg:backups:download`
       `pg_restore --verbose --clean --no-acl --no-owner -h localhost -d voting_development latest.dump`
