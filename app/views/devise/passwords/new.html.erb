@@ -13,6 +13,10 @@
           <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email Address' %>
       </div>
 
+      <div class="input-group">
+        <%= recaptcha_tags %>
+      </div>
+
       <%= f.submit "Reset My Password", class: "btn btn-primary btn-lg btn-block" %>
 
   </div>

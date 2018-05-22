@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/pages/*page' => 'pages#show'
 
-  devise_for :users
+  devise_for :users, { passwords: "passwords", registrations: "registrations" }
 
   # root 'proposals#index'
   root "pages#show", page: "home"

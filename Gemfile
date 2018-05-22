@@ -22,6 +22,7 @@ gem 'pg'
 gem 'puma'
 gem 'puma_worker_killer'
 gem 'rails_12factor', group: :production
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'sass-rails', '~> 5.0'
 gem 'sendgrid-ruby', group: :production
 gem 'simplecov', require: false, group: :test
@@ -31,6 +32,7 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'bullet'
   gem 'byebug'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rails-controller-testing'
