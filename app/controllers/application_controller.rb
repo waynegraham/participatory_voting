@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
 
   def set_rand_cookie
     return if cookies[:rand_seed].present?
+
     cookies[:rand_seed] = { value: rand, expires: Time.zone.now + 900 }
   end
 end
