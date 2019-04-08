@@ -27,10 +27,14 @@ In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the datab
 
     contribution_type_ignore = ['LAC Preconference']
 
+## Local Dependencies
+
+`brew tap heroku/brew && brew install heroku`
+`brew install postgresql`
+
 ## RVM
 
 -   Install [RVM](https://rvm.io/)
-
 
     $ rvm install 2.6.2
 
