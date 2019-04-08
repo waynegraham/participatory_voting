@@ -52,8 +52,8 @@ namespace :import do
 
     contribution_order = [
       'Learn@DLF',
-      '2018 DLF Forum',
-      'Digital Preservation 2018'
+      '2019 DLF Forum',
+      'Digital Preservation 2019'
     ]
 
     CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
