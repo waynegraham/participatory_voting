@@ -51,4 +51,4 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
