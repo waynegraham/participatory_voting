@@ -17,6 +17,6 @@ Rails.application.routes.draw do
 
   devise_for :users, { passwords: "passwords", registrations: "registrations" }
 
-  root 'proposals#index'
-  # root "pages#show", page: "home"
+  # root 'proposals#index'
+  root "pages#show", page: "home"
 end
