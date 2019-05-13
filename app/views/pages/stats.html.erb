@@ -1,0 +1,41 @@
+<div class="row">
+
+  <% @proposals.group_by(&:contribution_type).each do |c_type, proposals| %>
+    <section id="<%= c_type.parameterize %>" class="section-header">
+      <div class="vertical-center">
+        <div class="container">
+          <div class="col-sm-12">
+            <h1 class="title"><%= c_type %></h1>
+            <p class="bumper">
+              Statistics for the current voting session
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="row">
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Format</th>
+              <th>Votes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% proposals.each do |proposal| %>
+              <tr>
+                <td><%= proposal.title %></td>
+                <td><%= proposal.contribution_format %></td>
+                <td><%= proposal.cached_votes_total %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

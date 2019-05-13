@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   get '/pages/*page' => 'pages#show'
+  get '/stats/' => 'pages#stats'
 
   devise_for :users, { passwords: "passwords", registrations: "registrations" }
 

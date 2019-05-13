@@ -9,6 +9,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def stats
+      @proposals = Proposal.all.order(:title)
+  end
+
   private
 
   def valid_page?
