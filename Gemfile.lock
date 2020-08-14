@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rspec/rspec-core.git
-  revision: 56190f3201a47fda81b618984aa7cb19798ff2a1
+  revision: e7c5d030966a7e8dad3e0a67c61920c4f2437c15
   branch: master
   specs:
     rspec-core (3.10.0.pre)
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-expectations.git
-  revision: df28c7ba03999a032e4927b5028a63cdf444c331
+  revision: e63ff4765e1cd2798b02ddddad259f1104ef87a5
   branch: master
   specs:
     rspec-expectations (3.10.0.pre)
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-mocks.git
-  revision: 023dbbaa71cc223cf338c9d32fa9db2ebe227972
+  revision: 0a52e0a86b126b4bab94d277b2ad99a7492dc37d
   branch: master
   specs:
     rspec-mocks (3.10.0.pre)
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-rails.git
-  revision: 2c781aa148942df60aafe4fe855c50f0662cbccd
+  revision: 01704c50c146f720db914724c25681781ecefb23
   branch: master
   specs:
     rspec-rails (4.1.0.pre)
@@ -40,7 +40,7 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-support.git
-  revision: bba249a0a5e13c64c12b6ed7a02de39aa568ebaa
+  revision: 6447b0c2c9d1cd3e1504784fb85675ca9ae7b7c3
   branch: master
   specs:
     rspec-support (3.10.0.pre)
@@ -109,7 +109,7 @@ GEM
     ast (2.4.1)
     bcrypt (3.1.15)
     bindex (0.8.1)
-    bootsnap (1.4.7)
+    bootsnap (1.4.8)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
@@ -125,7 +125,7 @@ GEM
       capybara (>= 1.0, < 4)
       launchy
     childprocess (3.0.0)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     crass (1.0.6)
     devise (4.7.2)
       bcrypt (~> 3.0)
@@ -148,7 +148,7 @@ GEM
     faker (2.13.0)
       i18n (>= 1.6, < 2)
     ffi (1.13.1)
-    foreman (0.87.1)
+    foreman (0.87.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.5)
@@ -238,17 +238,17 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.4)
-    rubocop (0.88.0)
+    rubocop (0.89.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.1)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.7)
       rexml
-      rubocop-ast (>= 0.1.0, < 1.0)
+      rubocop-ast (>= 0.3.0, < 1.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (0.2.0)
-      parser (>= 2.7.0.1)
+    rubocop-ast (0.3.0)
+      parser (>= 2.7.1.4)
     rubocop-rails (2.7.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
