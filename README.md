@@ -1,5 +1,6 @@
 # Participatory Voting
 
+[![Build Status](https://travis-ci.org/clirdlf/participatory_voting.svg?branch=main)](https://travis-ci.org/clirdlf/participatory_voting)
 
 ## ConfTool Notes
 
@@ -36,7 +37,7 @@ In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the datab
 -   Install [RVM](https://rvm.io/)
 
     $ rvm install 2.7.1
-    
+
 ## Project Setup
 
     $ cd projects
@@ -100,3 +101,7 @@ From <https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases>
     heroku pg:copy DATABASE_URL HEROKU_POSTGRESQL_BLUE_URL
     heroku pg:promote HEROKU_POSTGRESQL_BLUE_URL
     heroku maintenance:off
+
+## Resetting
+
+    heroku run rake reset DISABLE_DATABASE_ENVIRONMENT_CHECK=1

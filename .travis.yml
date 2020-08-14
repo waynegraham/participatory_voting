@@ -14,6 +14,7 @@ services:
   - postgresql
 cache: bundler
 before_script:
+  - psql -c 'create database participatory_voter_test;' -U postgres
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:mirate --trace
 bundler_args: "--without production"
