@@ -35,8 +35,8 @@ In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the datab
 
 -   Install [RVM](https://rvm.io/)
 
-    $ rvm install 2.6.2
-
+    $ rvm install 2.7.1
+    
 ## Project Setup
 
     $ cd projects
