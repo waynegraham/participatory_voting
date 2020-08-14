@@ -1,0 +1,6 @@
+$("#like_<%= @proposal.id %>").removeClass('btn-warning').addClass('btn-info');
+// change button text
+$("#like_<%= @proposal.id %>").text("Cast Vote");
+// change button link to like
+$("#like_<%= @proposal.id %>").attr("href", '/proposals/<%= @proposal.id %>/like');
+$("#likes_<%= @proposal.id %>").html("<%= j (render partial: 'proposals/likes', locals: { proposal: @proposal } ) %>");

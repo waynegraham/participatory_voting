@@ -1,0 +1,8 @@
+// change the button class
+$("#like_<%= @proposal.id %>").removeClass('btn-info').addClass('btn-warning');
+// change the button text
+$("#like_<%= @proposal.id %>").text("Undo Vote");
+// change the button link to unlike
+$("#like_<%= @proposal.id %>").attr("href", '/proposals/<%= @proposal.id %>/unlike');
+// update count
+$("#likes_<%= @proposal.id %>").html("<%= j (render partial: 'proposals/likes', locals: { proposal: @proposal } ) %>");

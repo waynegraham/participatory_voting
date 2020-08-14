@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "DLF Community Voting Platform" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "DLF Community Voting Platform" %>">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'https://clirdlf.github.io/logo-fonts/style.min.css' %>
+    <%= stylesheet_link_tag 'https://clirdlf.github.io/logo-fonts/clir-font/stylesheet.min.css' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('clir_logo.png') %>
+  </head>
+
+  <body>
+    <header class="masthead">
+      <%= render 'layouts/login'%>
+    </header>
+
+    <%= render 'layouts/nav_section' %>
+
+    <main role="main" id="top">
+      <%= render 'layouts/messages' %>
+
+      <%= yield %>
+    </main>
+
+    <%= render 'layouts/footer' %>
+
+    <button class="to-top">
+      <span class="fas fa-chevron-up"></span>
+    </button>
+
+    <script>
+      window.ga = function () { ga.q.push(arguments)};ga.q = []; ga.l = +new Date;
+      ga('create', 'UA-9461551-3', 'auto');
+      ga('set', 'transport', 'beacon');
+      ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async="async"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<div class="form-signin text-center">
+<h2 class="h3 mb-3">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= flash[:recaptcha_error] %>
+
+  <div class="field">
+    <%= f.label :email, class: 'sr-only' %><br />
+    <%= f.email_field :email, class: 'form-control', autofocus: true, required: true, placeholder: 'Email address', autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'sr-only' %>
+
+    <%= f.password_field :password, class: 'form-control', required: true, placeholder: 'Password', autocomplete: "new-password" %>
+    <%# if @minimum_password_length %>
+    <!-- <br/>
+      <em class="text-muted">(<%#= @minimum_password_length %> characters minimum)</em>
+      -->
+    <%# end %><!-- <br /> -->
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: 'sr-only' %>
+    <%= f.password_field :password_confirmation, class: 'form-control', required: true, placeholder: 'Confirm Password', autocomplete: "new-password" %>
+  </div>
+
+  <%= recaptcha_tags %>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'mt-3 btn btn-lg btn-primary btn-block' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
