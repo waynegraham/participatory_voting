@@ -8,14 +8,13 @@ before_install:
   - gem install bundler
   - yes | gem update --system --force
 script:
-  - bundle exec rake spec
+  - bundle exec rake rspec
 sudo: false
 services:
   - postgresql
 cache: bundler
 before_script:
   - psql -c 'create database participatory_voter_test;' -U postgres
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:migrate --trace
 bundler_args: "--without production"
 deploy:
