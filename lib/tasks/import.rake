@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'csv'
+require 'roo'
 
 desc 'Convenience wrapper for resetting the database'
 task reset: ['db:reset', 'import:conftool']
@@ -8,6 +9,35 @@ task reset: ['db:reset', 'import:conftool']
 def latest_csv
   # get the last updated CSV file from lib/assets
   Dir.glob('./lib/assets/*.csv').max_by { |f| File.mtime(f) }
+end
+
+def latest_excel
+  Dir.glob('./lib/assets/*.xls*').max_by { |f| File.mtime(f) }
+end
+
+def latest_export(extension)
+  Dir.glob("./lib/assets/*#{extension}").max_by { |f| File.mtime(f) }
+end
+
+def add_csv(csv, ignore =[], order=[])
+  contribution_type_ignore = ignore
+
+  contribution_order = order
+
+  CSV.foreach(csv, headers: true, encoding: 'UTF-8') do |row|
+    puts "Adding #{row['title']}"
+    unless contribution_type_ignore.include? row['contribution_type']
+      Proposal.find_or_create_by!(id: row['paperID']) do |proposal|
+        proposal.author              = row['authors'],
+                                       proposal.title               = row['title'],
+                                       proposal.abstract            = row['abstract'],
+                                       proposal.contribution_type   = row['contribution_type']
+        proposal.contribution_format = row['contribution_format']
+
+        proposal.order = contribution_order.index(row['contribution_type'])
+      end
+    end
+  end
 end
 
 namespace :db do
@@ -45,6 +75,23 @@ namespace :report do
 end
 
 namespace :import do
+  desc 'Import Excel file'
+  task excel: :environment do
+    contribution_type_ignore = ['']
+
+    contribution_order = [
+      # 'Learn@DLF',
+      # '2020 DLF Forum',
+      # 'Digital Preservation 2020'
+    ]
+
+    converted = Roo::Spreadsheet.open(latest_excel, headers: true).to_csv
+
+    add_csv(converted)
+  end
+
+
+
   desc 'Import CSV documents from ConfTool dump'
   task conftool: :environment do
     # contribution_type_ignore = ['LAC Preconference']
@@ -52,9 +99,12 @@ namespace :import do
 
     contribution_order = [
       'Learn@DLF',
-      '2019 DLF Forum',
-      'Digital Preservation 2019'
+      '2020 DLF Forum',
+      'Digital Preservation 2020'
     ]
+
+    # add_csv(latest_csv)
+
 
     CSV.foreach(latest_csv, headers: true, encoding: 'UTF-8') do |row|
       puts "Adding #{row['title']}"

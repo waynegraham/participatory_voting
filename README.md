@@ -87,6 +87,10 @@ This project is set up to auto-deploy after tests pass on [travis](https://travi
 
 Run the `import:conftool` task in the terminal. If you want to clear out the data first, run `rake reset`, but the `import:conftool` task _should_ be idempotent and update any changes detected in the spreadsheet.
 
+### Travis
+
+Travis will deploy on pushes to `main`. You may need to update the token periodically ((see docs)[https://docs.travis-ci.com/user/deployment/heroku/]).
+
 # Other Notes
 
 -   [Sendgrid SPF Records](https://sendgrid.com/docs/Glossary/spf.html)

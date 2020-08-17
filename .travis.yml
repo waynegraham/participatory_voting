@@ -22,6 +22,7 @@ bundler_args: "--without production"
 deploy:
   provider: heroku
   true: main
+  app: dlf-voting-app
   run:
   - rake db:migrate
   - restart

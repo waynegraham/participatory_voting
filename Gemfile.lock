@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/rspec/rspec-core.git
-  revision: e7c5d030966a7e8dad3e0a67c61920c4f2437c15
-  branch: master
+  revision: 1dbf4a419ac7aa019d4dc1b0798c4b76880ca7ba
+  branch: main
   specs:
     rspec-core (3.10.0.pre)
       rspec-support (= 3.10.0.pre)
 
 GIT
   remote: https://github.com/rspec/rspec-expectations.git
-  revision: e63ff4765e1cd2798b02ddddad259f1104ef87a5
-  branch: master
+  revision: 3c7189e5b9150aa18e430e73e6b5e2c1ef3d6b64
+  branch: main
   specs:
     rspec-expectations (3.10.0.pre)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -17,8 +17,8 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-mocks.git
-  revision: 0a52e0a86b126b4bab94d277b2ad99a7492dc37d
-  branch: master
+  revision: 018d0d54a0ecaed259fd4eac5f151c51abb57b1d
+  branch: main
   specs:
     rspec-mocks (3.10.0.pre)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -26,8 +26,8 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-rails.git
-  revision: 01704c50c146f720db914724c25681781ecefb23
-  branch: master
+  revision: 067b5711ed4ac56f01b904ae71176d6f1edda35e
+  branch: main
   specs:
     rspec-rails (4.1.0.pre)
       actionpack (>= 4.2)
@@ -40,8 +40,8 @@ GIT
 
 GIT
   remote: https://github.com/rspec/rspec-support.git
-  revision: 6447b0c2c9d1cd3e1504784fb85675ca9ae7b7c3
-  branch: master
+  revision: a695d21c3962790f4375b84bc4cc98c6fb0b6e92
+  branch: main
   specs:
     rspec-support (3.10.0.pre)
 
@@ -238,6 +238,13 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.4)
+    roo (2.8.3)
+      nokogiri (~> 1)
+      rubyzip (>= 1.3.0, < 3.0.0)
+    roo-xls (1.2.0)
+      nokogiri
+      roo (>= 2.0.0, < 3)
+      spreadsheet (> 0.9.0)
     rubocop (0.89.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.1)
@@ -253,6 +260,7 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 0.87.0)
+    ruby-ole (1.2.12.2)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
@@ -271,10 +279,12 @@ GEM
       rubyzip (>= 1.2.2)
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
-    simplecov (0.18.5)
+    simplecov (0.19.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-html (0.12.2)
+    spreadsheet (1.2.6)
+      ruby-ole (>= 1.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -306,7 +316,7 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (>= 3.0, < 4.0)
-    webpacker (4.2.2)
+    webpacker (4.3.0)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -339,6 +349,7 @@ DEPENDENCIES
   rails-controller-testing
   rails_12factor
   recaptcha
+  roo-xls
   rspec-core!
   rspec-expectations!
   rspec-mocks!

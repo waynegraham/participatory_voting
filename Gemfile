@@ -32,6 +32,7 @@ gem 'acts_as_votable'
 gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'roo-xls'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -42,7 +43,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'faker'
   %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
-    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'master' # Previously '4-0-dev' or '4-0-maintenance' branch
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'main' # Previously '4-0-dev' or '4-0-maintenance' branch
   end
 end
 
