@@ -6,6 +6,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 before_install:
   - gem install bundler
+  - npm update -g npm
   - yes | gem update --system --force
 script:
   - bundle exec rake spec
