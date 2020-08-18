@@ -29,9 +29,9 @@ def add_csv(csv, ignore =[], order=[])
     unless contribution_type_ignore.include? row['contribution_type']
       Proposal.find_or_create_by!(id: row['paperID']) do |proposal|
         proposal.author              = row['authors'],
-                                       proposal.title               = row['title'],
-                                       proposal.abstract            = row['abstract'],
-                                       proposal.contribution_type   = row['contribution_type']
+        proposal.title               = row['title'],
+        proposal.abstract            = row['abstract'],
+        proposal.contribution_type   = row['contribution_type']
         proposal.contribution_format = row['contribution_format']
 
         proposal.order = contribution_order.index(row['contribution_type'])
