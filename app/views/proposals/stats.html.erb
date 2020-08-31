@@ -1,24 +1,37 @@
+<div class="row py-4">
+  <div class="col-4">
+    <%= stats_card('Total Proposals', @proposals.count) %>
+  </div>
+  <div class="col-4">
+    <% participants = User.find_by_sql('SELECT users.id FROM users INNER JOIN votes ON users.id = votes.voter_id group by users.id;').size %>
+    <%= stats_card('Participants', participants) %>
+  </div>
+  <div class="col-4">
+      <%= stats_card('Votes', @proposals.sum(:cached_votes_total)) %>
+  </div>
+</div>
+
 <% @proposals.group_by(&:contribution_type).each do |c_type, proposals| %>
-<h1><%= c_type %></h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Type</th>
-      <th>Format</th>
-      <th>Votes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% proposals.each do |proposal| %>
-    <tr>
-      <td><%= proposal.title %></td>
-      <td><%= proposal.contribution_type %></td>
-      <td><%= proposal.contribution_format %></td>
-      <td><%= proposal.cached_votes_score %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <h1><%= c_type %></h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Type</th>
+        <th>Format</th>
+        <th>Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% proposals.each do |proposal| %>
+        <tr>
+          <td><%= proposal.title %></td>
+          <td><%= proposal.contribution_type %></td>
+          <td><%= proposal.contribution_format %></td>
+          <td><%= proposal.cached_votes_score %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <% end %>
