@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'acts_as_votable'
 gem 'devise'
 gem 'rails_12factor', group: :production
-gem 'recaptcha', require: "recaptcha/rails"
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'roo-xls'
 
 # Reduces boot times through caching; required in config/boot.rb

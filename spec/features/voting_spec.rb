@@ -16,7 +16,7 @@ describe 'the voting process', type: :feature do
     user = create(:user)
 
     visit '/users/sign_in'
-    within("#new_user") do
+    within('#new_user') do
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
     end
@@ -31,7 +31,6 @@ describe 'the voting process', type: :feature do
   end
 
   describe 'The AJAX voting system', js: true do
-
     before :each do
       user = build(:user)
       login_as(user)
@@ -66,6 +65,4 @@ describe 'the voting process', type: :feature do
     #   expect(page).to have_content('Cast Vote')
     # end
   end
-
-
 end

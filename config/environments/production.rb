@@ -17,13 +17,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'clir.org',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'clir.org',
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Full error reports are disabled and caching is turned on.
@@ -79,19 +79,18 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # @see https://github.com/nathankw/pulsar_lims/wiki/Setting-up-mail-with-Mailgun#a-closer-look-at-email-configuration-in-pulsar
-  config.action_mailer.default_url_options = { :host => "dlf-voter.herokuapp.com" }
-
+  config.action_mailer.default_url_options = { host: 'dlf-voter.herokuapp.com' }
 
   ActionMailer::Base.delivery_method = :smtp
   # host = ENV['APP_HOST_NAME']
   #
   ActionMailer::Base.smtp_settings = {
-      port: ENV['MAILGUN_SMTP_PORT'],
-      address: ENV['MAILGUN_SMTP_SERVER'],
-      user_name: ENV['MAILGUN_SMTP_LOGIN'],
-      password: ENV['MAILGUN_SMTP_PASSWORD'],
-      # domain: ['APP_HOST_NAME'],
-      authentication: :plain,
+    port: ENV['MAILGUN_SMTP_PORT'],
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD'],
+    # domain: ['APP_HOST_NAME'],
+    authentication: :plain
   }
   #
   # #specify default URL for links that are sent in the emails (i.e confirmation email)
