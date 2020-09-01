@@ -79,7 +79,8 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # @see https://github.com/nathankw/pulsar_lims/wiki/Setting-up-mail-with-Mailgun#a-closer-look-at-email-configuration-in-pulsar
-  config.action_mailer.default_url_options = { host: 'dlf-voter.herokuapp.com' }
+  # config.action_mailer.default_url_options = { host: 'dlf-voter.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'voting.diglib.org' }
 
   ActionMailer::Base.delivery_method = :smtp
   # host = ENV['APP_HOST_NAME']
