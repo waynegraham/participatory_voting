@@ -8,7 +8,7 @@ describe 'the voting process', type: :feature do
   end
 
   it 'displays a sign in button' do
-    visit '/'
+    visit '/proposals'
     expect(page).to have_content('Sign In to Vote')
   end
 
@@ -26,12 +26,11 @@ describe 'the voting process', type: :feature do
 
   it 'has a Cast Vote button after login' do
     login_as(build(:user))
-    visit '/'
+    visit '/proposals'
     expect(page).to have_content('Cast Vote')
   end
 
   describe 'The AJAX voting system', js: true do
-    Capybara.save_path = "/Users/wgraham/projects/participatory_voting/"
 
     before :each do
       user = build(:user)
@@ -39,16 +38,16 @@ describe 'the voting process', type: :feature do
     end
 
     # it 'can cast a vote' do
-    #   visit '/'
-    #   click_link('Cast Vote')
-    #   # click_link('Cast Vote', wait: 600)
-    #   # find('#like_1', wait: 5).click
-    #   #find('#like_1').click
+    #   visit '/proposals'
     #
-    #   sleep(600)
-    #   # find_link(id: 'like_1').click
+    #   # click_link('Cast Vote', wait: 5)
+    #   #find('Cast Vote', wait: 5).click
+    #   puts find('#like_1').inspect
+    #   #find_link(id: 'like_1').trigger(:click)
+    #   sleep(60)
     #   expect(page).to have_content('Undo Vote')
-    #   save_and_open_page
+    #
+    #   # save_and_open_page
     # end
 
     # it 'increments the vote count' do
