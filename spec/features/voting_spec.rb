@@ -31,6 +31,8 @@ describe 'the voting process', type: :feature do
   end
 
   describe 'The AJAX voting system', js: true do
+    Capybara.save_path = "/Users/wgraham/projects/participatory_voting/"
+
     before :each do
       user = build(:user)
       login_as(user)
@@ -38,8 +40,12 @@ describe 'the voting process', type: :feature do
 
     # it 'can cast a vote' do
     #   visit '/'
-    #   # click_link('Cast Vote', wait: 5)
-    #   find('#like_1', wait: 5).click
+    #   click_link('Cast Vote')
+    #   # click_link('Cast Vote', wait: 600)
+    #   # find('#like_1', wait: 5).click
+    #   #find('#like_1').click
+    #
+    #   sleep(600)
     #   # find_link(id: 'like_1').click
     #   expect(page).to have_content('Undo Vote')
     #   save_and_open_page
