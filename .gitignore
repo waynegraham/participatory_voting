@@ -7,6 +7,8 @@
 .DS_Store
 .env
 *.dump
+*.csv
+*.sql
 
 # Ignore bundler config.
 /.bundle
