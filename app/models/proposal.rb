@@ -3,7 +3,7 @@
 ##
 # Proposal object
 class Proposal < ApplicationRecord
-  validates :title, :author, :abstract, presence: true
+  validates :title, :abstract, :contribution_type, :contribution_format, presence: true
 
   acts_as_votable
 end

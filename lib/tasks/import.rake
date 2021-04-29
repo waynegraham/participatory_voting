@@ -4,7 +4,7 @@ require 'csv'
 require 'roo'
 
 desc 'Convenience wrapper for resetting the database'
-task reset: ['db:reset', 'import:conftool']
+task reset: ['db:reset', 'import:membersuite']
 
 def latest_csv
   # get the last updated CSV file from lib/assets
@@ -90,6 +90,41 @@ namespace :import do
     add_csv(converted)
   end
 
+  desc 'Import MemberSuite file'
+  task membersuite: :environment do
+    contribution_type_ignore = ['']
+
+    contribution_order = [
+      # 'Learn@DLF',
+      # '2020 DLF Forum',
+      # 'Digital Preservation 2020'
+    ]
+
+    workbook = Roo::Spreadsheet.open(latest_excel, headers: true)
+    workbook.default_sheet = workbook.sheets[0]
+
+    headers = Hash.new
+    workbook.row(1).each_with_index { |header,i| headers[header] = i }
+
+    ((workbook.first_row + 1)..workbook.last_row).each do |row|
+      id           = workbook.row(row)[headers['ID']]
+      title        = workbook.row(row)[headers['Name']].to_s
+      # author       = workbook.row(row)[headers['Entrant']]
+      abstract     = workbook.row(row)[headers['Abstract: max 50 words for all formats.']]
+      format_long  = workbook.row(row)[headers['Submission Format: Select the format of your submission.']].to_s
+      split_format = format_long.split(' - ')
+
+      puts "Adding #{title}"
+      Proposal.find_or_create_by!(id: id) do |proposal|
+        proposal.title = title,
+        proposal.abstract = abstract,
+        proposal.contribution_format = split_format[0],
+        proposal.contribution_type = split_format[1]
+      end
+    end
+
+  end
+
   desc 'Import CSV documents from ConfTool dump'
   task conftool: :environment do
     # contribution_type_ignore = ['LAC Preconference']
@@ -108,9 +143,9 @@ namespace :import do
       unless contribution_type_ignore.include? row['contribution_type']
         Proposal.find_or_create_by!(id: row['paperID']) do |proposal|
           proposal.author              = row['authors'],
-                                         proposal.title               = row['title'],
-                                         proposal.abstract            = row['abstract'],
-                                         proposal.contribution_type   = row['contribution_type']
+         proposal.title               = row['title'],
+         proposal.abstract            = row['abstract'],
+         proposal.contribution_type   = row['contribution_type']
           proposal.contribution_format = row['contribution_format']
 
           proposal.order = contribution_order.index(row['contribution_type'])
