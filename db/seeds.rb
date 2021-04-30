@@ -11,8 +11,8 @@
 require 'faker'
 
 contribution_types = [
-  '2020 DLF Forum',
-  'Digital Preservation 2020',
+  '2021 DLF Forum',
+  'Digital Preservation 2021',
   'Learn@DLF'
 ]
 
