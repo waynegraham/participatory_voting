@@ -24,15 +24,15 @@ presentation_types = [
   'Breakfast/Lunch Working Session'
 ]
 
-10.times do |_p|
-  Proposal.create(
-    author: Faker::Name.name,
-    title: Faker::Book.title,
-    abstract: Faker::Hipster.paragraph(sentence_count: 5),
-    contribution_type: contribution_types.sample,
-    contribution_format: presentation_types.sample
-  )
-end
+# 10.times do |_p|
+#   Proposal.create(
+#     author: Faker::Name.name,
+#     title: Faker::Book.title,
+#     abstract: Faker::Hipster.paragraph(sentence_count: 5),
+#     contribution_type: contribution_types.sample,
+#     contribution_format: presentation_types.sample
+#   )
+# end
 
 # t.string "author"
 # t.string "title"

@@ -108,19 +108,22 @@ namespace :import do
 
     ((workbook.first_row + 1)..workbook.last_row).each do |row|
       id           = workbook.row(row)[headers['ID']]
-      title        = workbook.row(row)[headers['Name']].to_s
-      # author       = workbook.row(row)[headers['Entrant']]
+      name        = workbook.row(row)[headers['Name']]
+      author       = workbook.row(row)[headers['Entrant']]
       abstract     = workbook.row(row)[headers['Abstract: max 50 words for all formats.']]
       format_long  = workbook.row(row)[headers['Submission Format: Select the format of your submission.']].to_s
       split_format = format_long.split(' - ')
 
-      puts "Adding #{title}"
+      puts "Adding #{name}"
+
       Proposal.find_or_create_by!(id: id) do |proposal|
-        proposal.title = title,
-        proposal.abstract = abstract,
-        proposal.contribution_format = split_format[0],
-        proposal.contribution_type = split_format[1]
+        proposal.title               = name,
+        proposal.abstract            = abstract,
+        proposal.author = author,
+        proposal.contribution_format = split_format[1],
+        proposal.contribution_type   = split_format[0]
       end
+
     end
 
   end
