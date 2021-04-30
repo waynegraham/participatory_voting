@@ -117,9 +117,12 @@ namespace :import do
       puts "Adding #{name}"
 
       Proposal.find_or_create_by!(id: id) do |proposal|
+        # Note: for some reason, the field in the first position adds the entire
+        # record to the string. Reordered to a field that is not displayed to
+        # go around the problem
+        proposal.author              = author,
         proposal.title               = name,
         proposal.abstract            = abstract,
-        proposal.author = author,
         proposal.contribution_format = split_format[1],
         proposal.contribution_type   = split_format[0]
       end
