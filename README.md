@@ -38,7 +38,7 @@ In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the datab
 
 -   Install [RVM](https://rvm.io/)
 
-    $ rvm install 2.7.1
+    $ rvm install 3.0.1
 
 ## Project Setup
 
@@ -46,7 +46,7 @@ In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the datab
     $ git clone git@github.com:clirdlf/participatory_voting.git
     $ cd participatory_voting
     $ gem install bundler
-    $ bundle
+    $ bundle install
     $ rake db:create
     $ rake db:migrate
     $ rake import:conftool
@@ -87,7 +87,7 @@ This project is set up to auto-deploy after tests pass on [travis](https://travi
 
 ## Seeding the data
 
-Run the `import:conftool` task in the terminal. If you want to clear out the data first, run `rake reset`, but the `import:conftool` task _should_ be idempotent and update any changes detected in the spreadsheet.
+Run the `import:membersuite` task in the terminal. If you want to clear out the data first, run `rake reset`, but the `import:membersuite` task _should_ be idempotent and update any changes detected in the spreadsheet.
 
 ### Travis
 
