@@ -49,7 +49,7 @@ In the `lib/tasks/import.rake`, there is a task to add a `Proposal` to the datab
     $ bundle install
     $ rake db:create
     $ rake db:migrate
-    $ rake import:conftool
+    $ rake import:membersuite
 
 ## Postgresql
 
