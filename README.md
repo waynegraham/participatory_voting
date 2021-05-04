@@ -120,6 +120,13 @@ From <https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases>
 - [ ] Remove last year's data (`heroku rails console` then `Proposal.destroy_all`)
 - [ ] Load new data (`rake import:membersuite`)
 
+# Prelaunch Tests
+
+- [ ] Verify new account creation functions as expected
+- [ ] Verify password reset functions as expected
+- [ ] Verify votes are recorded
+- [ ] Verify scrolling to different programs functions
+
 # Post-Production Checklist
 
 - [ ] Disable force TLS connection (`config/environments/production.rb`)
