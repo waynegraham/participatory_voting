@@ -6,6 +6,17 @@ Rails.application.configure do
   # For Devise
   config.action_mailer.default_url_options = { host: 'voting.diglib.org' }
 
+  # For SendGrid
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :authentication => :plain,
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'heroku.com',
+    :enable_startstls_auto => true
+  }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
