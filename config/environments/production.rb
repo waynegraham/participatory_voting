@@ -3,6 +3,20 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # For Devise
+  config.action_mailer.default_url_options = { host: 'voting.diglib.org' }
+
+  # For MailGun
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    port: ENV['MAILGUN_SMTP_PORT'],
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD'],
+    # domain: ['APP_HOST_NAME'],
+    authentication: :plain
+  }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -50,7 +64,8 @@ Rails.application.configure do
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
-  config.log_level = :info
+  #config.log_level = :info
+  config.log_level = :warn
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
