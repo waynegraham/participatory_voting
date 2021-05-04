@@ -95,9 +95,9 @@ namespace :import do
     contribution_type_ignore = ['']
 
     contribution_order = [
-      # 'Learn@DLF',
-      # '2020 DLF Forum',
-      # 'Digital Preservation 2020'
+      'DLF Forum',
+      'NDSA\'s DigiPres',
+      'Learn@DLF'
     ]
 
     workbook = Roo::Spreadsheet.open(latest_excel, headers: true)
@@ -125,7 +125,9 @@ namespace :import do
         proposal.abstract            = abstract,
         proposal.contribution_format = split_format[1],
         proposal.contribution_type   = split_format[0]
+        proposal.order               = contribution_order.index(split_format[0])
       end
+
 
     end
 
