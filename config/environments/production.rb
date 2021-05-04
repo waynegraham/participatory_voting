@@ -7,14 +7,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'voting.diglib.org' }
 
   # For SendGrid
+  # @see https://sendgrid.com/docs/for-developers/sending-email/rubyonrails/
   ActionMailer::Base.smtp_settings = {
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => ENV['SENDGRID_API_KEY'], # This is the secret sendgrid API key which was issued during API key creation
+    :domain => 'voting.diglib.org',
     :address => 'smtp.sendgrid.net',
-    :port => '587',
+    :port => 587,
     :authentication => :plain,
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'heroku.com',
-    :enable_startstls_auto => true
+    :enable_starttls_auto => true
   }
 
   # Code is not reloaded between requests.

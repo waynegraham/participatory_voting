@@ -37,18 +37,19 @@ describe 'the voting process', type: :feature do
       login_as(user)
     end
 
-    # it 'can cast a vote' do
-    #   visit '/proposals'
-    #
-    #   # click_link('Cast Vote', wait: 5)
-    #   #find('Cast Vote', wait: 5).click
-    #   puts find('#like_1').inspect
-    #   #find_link(id: 'like_1').trigger(:click)
-    #   sleep(60)
-    #   expect(page).to have_content('Undo Vote')
-    #
-    #   # save_and_open_page
-    # end
+    it 'can cast a vote' do
+      visit '/proposals'
+
+      # click_link('Cast Vote', wait: 5)
+      #find('Cast Vote', wait: 5).click
+      click_link('Cast Vote')
+      puts find('#like_1').inspect
+      #find_link(id: 'like_1').trigger(:click)
+      sleep(60)
+      expect(page).to have_content('Undo Vote')
+
+      # save_and_open_page
+    end
 
     # it 'increments the vote count' do
     #   visit '/'

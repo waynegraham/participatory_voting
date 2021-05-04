@@ -111,3 +111,17 @@ From <https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases>
 ## Resetting
 
     heroku run rake reset DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+
+# Production Checklist
+
+- [ ] Promote to **Hobby** level in Heroku
+- [ ] Force TLS connection (`config/environments/production.rb`)
+- [ ] Set default route to `root 'proposals#index'` (`config/routes.rb`)
+- [ ] Remove last year's data (`heroku rails console` then `Proposal.destroy_all`)
+- [ ] Load new data (`rake import:membersuite`)
+
+# Post-Production Checklist
+
+- [ ] Disable force TLS connection (`config/environments/production.rb`)
+- [ ] Set default route to `root "pages#show", page: "home"` (in `config/routes.rb`)
+- [ ] Demote to **Free** level in Heroku
