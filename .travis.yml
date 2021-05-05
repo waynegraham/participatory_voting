@@ -26,12 +26,3 @@ before_script:
   - bundle exec rake db:migrate --trace
   - yarn install --ignore-engines
 bundler_args: "--without production"
-deploy:
-  provider: heroku
-  true: main
-  app: dlf-voting-app
-  run:
-  - rake db:migrate
-  - restart
-  api_key:
-    secure: pIUVNoWDfdKOydrXC1HKFo1nZ6HNc4+Z4b4SN0aNkqGLiJgBmyiDNzWKcFMl/KgyBNUyhSV42HLyk5cCQ1h1lv96y4RbDGQOLDzIlhcXPUPLNMUkrvgGZkLVf2IkdNk9ACrvLILPpE1JK5bNShHjQPxbKMFB6qETTMDJSdPrQ2nmCIRk21hElLkk/njFrUn02qR3cnWcXMQgF8q5Y0IStMKMEXF83OgLwrJbP1lpHu/SqQ/+FG5qiUDD1LmoKJCK6k/QCSAFj1eVK3cn+aVvwN1xPiUek638HvuCFz8fG9lnBmcmazXN6Myb+imS6AbkO/mTI2QTtk8fFvqfrCm6kh8PPfMQWoCCkCGJxJoBC4u6xFTS13y53eWC/mccofxs8ofBftYAYtRP7JvsNI/8TXHt7MgOT65/knNHERCdPkxyxShbP+WCPuUpSA5jTb+ZxoQ8utpOpa1LbnvOHk04SkxLn/x2LWpKsPezt2ZegesGaYyl87pTWoUxQZBnh0OchV6zlhd8NCm/vKpsGQznUVWPXZcgAOmJbdR4D3f32FhYLLDjApdFw+zXlNkWiW3gRIgtXGxDrwf9s2xBHQ62GhO4Igq7xf+1d/TdTWnUJRiqFGQwMdCbtbOnG93JePWqHb2Y9If+E6IRzBcAVUhJUyD8XKllXmC6DnQGgUun6+o=
