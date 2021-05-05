@@ -103,12 +103,12 @@ namespace :import do
     workbook = Roo::Spreadsheet.open(latest_excel, headers: true)
     workbook.default_sheet = workbook.sheets[0]
 
-    headers = Hash.new
-    workbook.row(1).each_with_index { |header,i| headers[header] = i }
+    headers = {}
+    workbook.row(1).each_with_index { |header, i| headers[header] = i }
 
     ((workbook.first_row + 1)..workbook.last_row).each do |row|
-      id           = workbook.row(row)[headers['ID']]
-      name        = workbook.row(row)[headers['Name']]
+      id = workbook.row(row)[headers['ID']]
+      name = workbook.row(row)[headers['Name']]
       author       = workbook.row(row)[headers['Entrant']]
       abstract     = workbook.row(row)[headers['Abstract: max 50 words for all formats.']]
       format_long  = workbook.row(row)[headers['Submission Format: Select the format of your submission.']].to_s
@@ -117,20 +117,17 @@ namespace :import do
       puts "Adding #{name}"
 
       Proposal.find_or_create_by!(id: id) do |proposal|
-        # Note: for some reason, the field in the first position adds the entire
+        # NOTE: for some reason, the field in the first position adds the entire
         # record to the string. Reordered to a field that is not displayed to
         # go around the problem
         proposal.author              = author,
-        proposal.title               = name,
-        proposal.abstract            = abstract,
-        proposal.contribution_format = split_format[1],
-        proposal.contribution_type   = split_format[0]
+                                       proposal.title               = name,
+                                       proposal.abstract            = abstract,
+                                       proposal.contribution_format = split_format[1],
+                                       proposal.contribution_type   = split_format[0]
         proposal.order               = contribution_order.index(split_format[0])
       end
-
-
     end
-
   end
 
   desc 'Import CSV documents from ConfTool dump'
@@ -151,9 +148,9 @@ namespace :import do
       unless contribution_type_ignore.include? row['contribution_type']
         Proposal.find_or_create_by!(id: row['paperID']) do |proposal|
           proposal.author              = row['authors'],
-         proposal.title               = row['title'],
-         proposal.abstract            = row['abstract'],
-         proposal.contribution_type   = row['contribution_type']
+                                         proposal.title               = row['title'],
+                                         proposal.abstract            = row['abstract'],
+                                         proposal.contribution_type   = row['contribution_type']
           proposal.contribution_format = row['contribution_format']
 
           proposal.order = contribution_order.index(row['contribution_type'])

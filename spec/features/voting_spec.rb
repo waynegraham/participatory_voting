@@ -33,12 +33,11 @@ describe 'the voting process', type: :feature do
   describe 'The AJAX voting system', js: true do
     # see https://github.com/heartcombo/devise/wiki/How-To:-Test-with-Capybara#capybara-webkit
     before :each do
-      user = User.create!(email: 'test@example.com', password: "f4k3p455w0rd")
+      user = User.create!(email: 'test@example.com', password: 'f4k3p455w0rd')
       login_as(user, scope: :user, run_callbacks: false)
     end
 
     it 'can cast a vote', js: true do
-
       visit '/'
 
       click_on('Cast Vote')

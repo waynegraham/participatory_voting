@@ -43,7 +43,7 @@ RSpec.describe ProposalsController, type: :controller do
   describe '#like' do
     before :each do
       @proposal = FactoryBot.create(:proposal)
-      @user = User.create!(email: 'test@example.com', password: "f4k3p455w0rd")
+      @user = User.create!(email: 'test@example.com', password: 'f4k3p455w0rd')
     end
 
     describe 'voting for a proposal' do
@@ -51,7 +51,6 @@ RSpec.describe ProposalsController, type: :controller do
         login_as(@user, scope: :user, run_callbacks: false)
         # TODO
         # expect { put :like, params: {id: @proposal.id}, format: :js }.to be_successful
-
       end
 
       it 'calls unlike on a liked proposal' do
