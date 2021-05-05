@@ -31,44 +31,38 @@ describe 'the voting process', type: :feature do
   end
 
   describe 'The AJAX voting system', js: true do
-
+    # see https://github.com/heartcombo/devise/wiki/How-To:-Test-with-Capybara#capybara-webkit
     before :each do
-      user = build(:user)
-      login_as(user)
+      user = User.create!(email: 'test@example.com', password: "f4k3p455w0rd")
+      login_as(user, scope: :user, run_callbacks: false)
     end
 
-    it 'can cast a vote' do
-      visit '/proposals'
+    it 'can cast a vote', js: true do
 
-      # click_link('Cast Vote', wait: 5)
-      #find('Cast Vote', wait: 5).click
-      click_link('Cast Vote')
-      puts find('#like_1').inspect
-      #find_link(id: 'like_1').trigger(:click)
-      sleep(60)
+      visit '/'
+
+      click_on('Cast Vote')
       expect(page).to have_content('Undo Vote')
-
-      # save_and_open_page
     end
 
-    # it 'increments the vote count' do
-    #   visit '/'
-    #   click_link('Cast Vote', wait: 5)
-    #   expect(page).to have_content('1 Like')
-    # end
-    #
-    # it 'decriments the vote count' do
-    #   visit '/'
-    #   click_link('Cast Vote', wait: 5)
-    #   click_link('Undo Vote', wait: 5)
-    #   expect(page).to have_content('0 Likes')
-    # end
-    #
-    # it 'can undo a vote' do
-    #   visit '/'
-    #   click_link('Cast Vote', wait: 5) # cast a vote
-    #   click_link('Undo Vote', wait: 5)
-    #   expect(page).to have_content('Cast Vote')
-    # end
+    it 'increments the vote count' do
+      visit '/'
+      click_link('Cast Vote')
+      expect(page).to have_content('1 Like')
+    end
+
+    it 'decriments the vote count' do
+      visit '/'
+      click_link('Cast Vote')
+      click_link('Undo Vote')
+      expect(page).to have_content('0 Likes')
+    end
+
+    it 'can undo a vote' do
+      visit '/'
+      click_link('Cast Vote') # cast a vote
+      click_link('Undo Vote')
+      expect(page).to have_content('Cast Vote')
+    end
   end
 end

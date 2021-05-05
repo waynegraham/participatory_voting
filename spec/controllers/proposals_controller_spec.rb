@@ -22,6 +22,7 @@ RSpec.describe ProposalsController, type: :controller do
       Proposal.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_successful
+      expect(response).to render_template('index')
     end
 
     it 'assigns @proposals' do
@@ -41,17 +42,20 @@ RSpec.describe ProposalsController, type: :controller do
 
   describe '#like' do
     before :each do
-      FactoryBot.create(:proposal)
+      @proposal = FactoryBot.create(:proposal)
+      @user = User.create!(email: 'test@example.com', password: "f4k3p455w0rd")
     end
 
     describe 'voting for a proposal' do
       it 'calls the #like method of the proposal via put' do
-        # put :like, :params => { :proposal => :proposal }
-        # expect { proposal }.to receive(:vote).with(1)
+        login_as(@user, scope: :user, run_callbacks: false)
+        # TODO
+        # expect { put :like, params: {id: @proposal.id}, format: :js }.to be_successful
+
       end
 
       it 'calls unlike on a liked proposal' do
-        # put TODO
+        # TODO
       end
     end
   end
