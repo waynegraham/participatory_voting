@@ -24,14 +24,16 @@
       <%= render 'layouts/messages' %>
 
       <%= yield %>
+
+      <button type="button" class="to-top" >
+        <span class="fas fa-chevron-up"></span>
+        <span class="sr-only sr-only-focusable">Back to top</span>
+      </button>
+
     </main>
 
     <%= render 'layouts/footer' %>
 
-    <button type="button" class="to-top" >
-      <span class="fas fa-chevron-up"></span>
-      <span class="sr-only sr-only-focusable">Back to top</span>
-    </button>
 
     <script>
       window.ga = function () { ga.q.push(arguments)};ga.q = []; ga.l = +new Date;
