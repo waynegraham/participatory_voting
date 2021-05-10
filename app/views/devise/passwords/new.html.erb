@@ -1,18 +1,20 @@
-<div class="form-signin text-center">
-  <h2 class="h3 my-3">Forgot your password?</h2>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h2 class="h3 my-3">Forgot your password?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email, class: 'sr-only' %>
-    <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :email, class: 'sr-only' %>
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Send Reset Instructions", class: 'mt-3 btn btn-lg btn-primary btn-block' %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "Send Reset Instructions", class: 'mt-3 btn btn-lg btn-primary btn-block' %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
 </div>
