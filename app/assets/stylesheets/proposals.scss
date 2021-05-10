@@ -243,10 +243,6 @@ section {
   // margin-top: 20px;
 }
 
-.abstract {
-  // display:none;
-}
-
 .title {
   font-size: 24px;
   font-weight: 300;
@@ -254,7 +250,9 @@ section {
 
 .abstract {
   background-color: #f7f7f7;
-  color: #696969;
+  // color: #696969;
+  color: #545454;
+
   // background-color: #fff;
   padding: 20px;
   margin-top: 10px;
@@ -357,6 +355,13 @@ section {
 }
 
 footer {
+
+  h2 {
+    font-size: 24px;
+    padding-top: 21px;
+    line-height:40px;
+  }
+
   .footer-title {
     margin: 0 0 22px;
     padding-top: 21px;
