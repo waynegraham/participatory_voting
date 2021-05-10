@@ -8,7 +8,8 @@
 $green:    #6c825f;
 $orange:   #ed8d1b;
 $red:      #ac2429;
-$blue-ish: #0e76bc;
+// $blue-ish: #0e76bc;
+$blue-ish: #005b9d;
 $gray:     #f7f7f7;
 
 html {
@@ -117,7 +118,8 @@ p.bumper {
 
 .blue {
   // background-color: #1bbc9b;
-  background: #1977ba;
+  // background: #1977ba;
+  background: #005b9d;
 }
 
 #proposals {
@@ -291,6 +293,16 @@ section {
     p { font-size: 12px; }
   }
 }
+
+
+.media-heading {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  padding: 0;
+}
+
 
 .bg-green {
   color: #fff !important;
