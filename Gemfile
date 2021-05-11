@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'acts_as_votable'
 gem 'devise'
 gem 'rails_12factor', group: :production
+gem 'newrelic_rpm', group: :production
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'roo-xls'
 
