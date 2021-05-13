@@ -139,6 +139,7 @@ p.bumper {
   // padding-bottom: 40px;
 }
 
+
 .format {
   // color: #0099ae;
   padding: 0;
@@ -147,7 +148,20 @@ p.bumper {
   span {
     margin-left: 8px;
     margin-right: 5px;
+
+    // font-size: 16px;
+
+    &.badge-90-minute-workshop { background: $orange; color: #fff; }
+    &.badge-15-minute-talk-demo { background: #007aba; color: #fff; }
+    &.badge-6-2-1-lightning-talk { background: #fcaf4f; color: #fff; }
+    &.badge-15-minute-presentation { background: #c12638; color: #fff; }
+    &.badge-45-minute-panel { background: $green; color: #fff; }
+    &.badge-5-minute-lightning-talk { background: #fcaf4f; color: #fff; }
   }
+
+
+
+
 
   &.snapshot { color: $orange; }
   &.panel { color: $green; }

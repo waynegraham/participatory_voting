@@ -20,7 +20,7 @@
             <p class="title">
               <%= proposal.title %>
             </p>
-            <p class="format <%= proposal.contribution_format.parameterize %>">
+            <p class="format">
 
               <% if !current_user %>
                 <%= link_to "Sign In to Vote", new_user_session_path, :class => 'btn btn-primary' %>
@@ -30,8 +30,16 @@
                 <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, remote: :true, id: "like_#{proposal.id}", class: 'btn btn-info' %>
               <% end %>
 
-              <%= format_icon(proposal.contribution_format) %>
-              <%= proposal.contribution_format %>
+              <span class="badge badge-<%= proposal.contribution_format.parameterize %>">
+                <%= format_icon(proposal.contribution_format) %>
+                <%= proposal.contribution_format %>
+              </div>
+              <!-- <span class="<%#= proposal.contribution_format.parameterize %>">
+                <%#= format_icon(proposal.contribution_format) %>
+                <%#= proposal.contribution_format %>
+              </span> -->
+
+
             </p>
             <%= render 'likes', :proposal => proposal %>
 
