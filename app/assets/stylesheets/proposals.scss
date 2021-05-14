@@ -1,23 +1,21 @@
 // Place all the styles related to the Proposals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
 @import "bootstrap";
 @import "fonts";
 @import "badges";
-
-$green:    #6c825f;
-$orange:   #ed8d1b;
-$red:      #ac2429;
-// $blue-ish: #0e76bc;
+$green: #6c825f;
+$orange: #ed8d1b;
+$red: #ac2429; // $blue-ish: #0e76bc;
 $blue-ish: #005b9d;
-$gray:     #f7f7f7;
+$gray: #f7f7f7;
 
 html {
   -webkit-font-smoothing: antialiased;
 }
 
-body,html{
+body,
+html {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -31,7 +29,7 @@ body,html{
 }
 
 .bg-gray {
-  background-color:  #eef2f5;
+  background-color: #eef2f5;
   border-bottom: 1px solid #e9e9e9;
   border-top: 1px solid #e9e9e9;
 }
@@ -42,10 +40,9 @@ body,html{
   width: 100%;
   position: static;
 }
-
 // Sections
 .section-header {
-  background-image: url(asset_path('header-bg.png'));
+  background-image: url("asset_path('header-bg.png')");
   background-color: #fbfafa;
   background-repeat: repeat-x;
   height: 130px;
@@ -63,8 +60,12 @@ body,html{
   }
 }
 
-
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
@@ -75,7 +76,6 @@ p {
   font-weight: 300;
   line-height: 1.5em;
 }
-
 // Top naviation
 #conferences {
   padding: 50px 0;
@@ -128,7 +128,7 @@ p.bumper {
     margin-top: 25px;
     text-align: center;
     color: #eb5055;
-    padding-bottom: .5em;
+    padding-bottom: 0.5em;
     font-size: 36px;
     text-transform: uppercase;
   }
@@ -140,22 +140,6 @@ p.bumper {
   // padding-bottom: 40px;
 }
 
-@mixin badge-var($bg, $foreground: #fff) {
-  background-color: $bg;
-  color: $foreground;
-  &[href] {
-    @include hover-focus {
-      color: $foreground;
-      text-decoration: none;
-      background-color: darken($bg, 10%);
-    }
-  }
-}
-
-// todo: partial
-
-
-
 .format {
   // color: #0099ae;
   padding: 0;
@@ -164,28 +148,48 @@ p.bumper {
   span {
     margin-left: 8px;
     margin-right: 5px;
-
     // font-size: 16px;
   }
 
+  &.snapshot {
+    color: $orange;
+  }
 
-  &.snapshot { color: $orange; }
-  &.panel { color: $green; }
-  &.presentation { color: #c12638; }
-  &.workshop { color: #ca553a; }
-  &.talks-or-demos { color: #007aba; }
-  &.hands-on-workshop { color: #00b2ed; }
-  &.lunchtime-working-session { color: #0099ae; }
-  &.lightning-talk{ color: #fcaf4f; }
+  &.panel {
+    color: $green;
+  }
 
+  &.presentation {
+    color: #c12638;
+  }
+
+  &.workshop {
+    color: #ca553a;
+  }
+
+  &.talks-or-demos {
+    color: #007aba;
+  }
+
+  &.hands-on-workshop {
+    color: #00b2ed;
+  }
+
+  &.lunchtime-working-session {
+    color: #0099ae;
+  }
+
+  &.lightning-talk {
+    color: #fcaf4f;
+  }
 }
 
 .btn-red {
   position: relative;
   color: #fff;
-  background:#eb5055;
+  background: #eb5055;
   font-family: 'Raleway', sans-serif;
-  font-size: .875em !important;
+  font-size: 0.875em !important;
   font-weight: 300;
   color: inherit;
   background: none;
@@ -206,12 +210,12 @@ p.bumper {
 
   &:hover {
     color: #fff;
-    background:#eb5055;
+    background: #eb5055;
   }
 
   &:active {
     color: #fff;
-    background:#eb5055;
+    background: #eb5055;
   }
 }
 
@@ -221,26 +225,22 @@ header {
 
 .navbar-custom {
   font: 'Roboto', sans-serif;
-    // background-color: rgba(51,51,51,.6);
-    // border:none;
-    // border-radius: 0;
-    // transition: background .3s ease-in;
-
-    a {
-      // font-weight: 300;
-      color: #fff;
-      display: inline-block;
-      position: relative;
-      padding: 25px 25px;
-      // transition: all .25s;
-    }
-
-    // &:hover {
-    //   background: rgba(51, 51, 51, 1);
-    // }
+  // background-color: rgba(51,51,51,.6);
+  // border:none;
+  // border-radius: 0;
+  // transition: background .3s ease-in;
+  a {
+    // font-weight: 300;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    padding: 25px;
+    // transition: all .25s;
+  }
+  // &:hover {
+  //   background: rgba(51, 51, 51, 1);
+  // }
 }
-
-
 // all images responsive by default
 img {
   // @extend .img-responsive;
@@ -249,7 +249,6 @@ img {
 
 .column {
   @extend .col-md-6;
-
 }
 
 main {
@@ -274,7 +273,6 @@ section {
   background-color: #f7f7f7;
   // color: #696969;
   color: #545454;
-
   // background-color: #fff;
   padding: 20px;
   margin-top: 10px;
@@ -282,18 +280,13 @@ section {
   line-height: 2em;
   // border-bottom: 5px solid #666;
   // border-bottom: 5px solid #3399ff;
-
   font-size: 1.125em;
   // text-align: justify;
-
   .bold {
     font-weight: 700;
     // color: $orange;
   }
-
-
 }
-
 // .vote_tally {
 //   background-color: #00a65a !important;
 //   font-size: 24px;
@@ -304,25 +297,27 @@ section {
 //   padding: 8px 0;
 //   color: #fff;
 // }
-
-@media (max-width: 767px){
+@media (max-width: 767px) {
   .small-box {
     text-align: center;
 
-    .icon { display:none; }
-    p { font-size: 12px; }
+    .icon {
+      display: none;
+    }
+
+    p {
+      font-size: 12px;
+    }
   }
 }
-
 
 .media-heading {
   font-size: 38px;
   font-weight: bold;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   white-space: nowrap;
   padding: 0;
 }
-
 
 .bg-green {
   color: #fff !important;
@@ -332,7 +327,6 @@ section {
 .bg-green-active {
   background-color: #008d4c !important;
 }
-
 // .small-box {
 //   text-align: center;
 //   border-radius: 2px;
@@ -366,6 +360,7 @@ section {
 //   }
 // }
 //
+
 .to-top {
   display: none;
   background-color: #333;
@@ -378,7 +373,7 @@ section {
   bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:hover {
     // color: #eb5055;
@@ -387,11 +382,10 @@ section {
 }
 
 footer {
-
   h2 {
     font-size: 24px;
     padding-top: 21px;
-    line-height:40px;
+    line-height: 40px;
   }
 
   .footer-title {
@@ -419,7 +413,10 @@ footer {
     margin-left: 42px;
     min-height: 316px;
     padding: 0 30px 30px;
-    a {color: #fff;}
+
+    a {
+      color: #fff;
+    }
   }
 
   h5 {
@@ -429,18 +426,21 @@ footer {
     font-weight: 700;
     letter-spacing: 1px;
   }
+
   a {
     // color: #97a0af;
-		color: #00040c;
+    color: #00040c;
     // color: #fff;
     &:hover {
       // color: #0ccfa8;
       text-decoration: underline;
     }
   }
+
   ul li {
     margin: 5px 0;
   }
+
   .footer-alt {
     border-top: 1px solid rgba(151, 160, 175, 0.2);
     margin-top: 30px;
@@ -449,6 +449,7 @@ footer {
     .logo {
       color: #97a0af !important;
       margin-bottom: 0;
+
       i {
         margin-right: 5px;
       }
