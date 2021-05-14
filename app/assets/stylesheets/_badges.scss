@@ -1,11 +1,6 @@
 @import "bootstrap";
 @import "fonts";
-
-$green:    #6c825f;
-$orange:   #ed8d1b;
-$red:      #ac2429;
-$blue-ish: #005b9d;
-$gray:     #f7f7f7;
+@import "variables";
 
 @mixin badge-var($bg, $foreground: #fff) {
   background-color: $bg;
@@ -19,9 +14,9 @@ $gray:     #f7f7f7;
   }
 }
 
-.badge-90-minute-workshop      { @include badge-var($orange); }
-.badge-15-minute-talk-demo     { @include badge-var(#007aba); }
-.badge-6-2-1-lightning-talk    { @include badge-var(#fcaf4f); }
-.badge-15-minute-presentation  { @include badge-var($red); }
-.badge-45-minute-panel         { @include badge-var($green); }
-.badge-5-minute-lightning-talk { @include badge-var(#fcaf4f); }
+.badge-90-minute-workshop      { @include badge-var($shadow-blue); }
+.badge-15-minute-talk-demo     { @include badge-var($glossy-grape); }
+.badge-6-2-1-lightning-talk    { @include badge-var($middle-blue-green); }
+.badge-15-minute-presentation  { @include badge-var($cedar-chest); }
+.badge-45-minute-panel         { @include badge-var($steel-teal); }
+.badge-5-minute-lightning-talk { @include badge-var($mauvelous); }

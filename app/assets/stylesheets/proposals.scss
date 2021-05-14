@@ -4,11 +4,7 @@
 @import "bootstrap";
 @import "fonts";
 @import "badges";
-$green: #6c825f;
-$orange: #ed8d1b;
-$red: #ac2429; // $blue-ish: #0e76bc;
-$blue-ish: #005b9d;
-$gray: #f7f7f7;
+@import "variables";
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -42,7 +38,7 @@ html {
 }
 // Sections
 .section-header {
-  background-image: url("asset_path('header-bg.png')");
+  background-image: url('header-bg.png');
   background-color: #fbfafa;
   background-repeat: repeat-x;
   height: 130px;
@@ -276,7 +272,7 @@ section {
   // background-color: #fff;
   padding: 20px;
   margin-top: 10px;
-  border-bottom: 3px solid #c12638;
+  border-bottom: 3px solid $quinacridone-magenta;
   line-height: 2em;
   // border-bottom: 5px solid #666;
   // border-bottom: 5px solid #3399ff;
