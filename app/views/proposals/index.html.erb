@@ -17,11 +17,19 @@
       <div class="container">
         <div class="col-md-12">
           <div id="proposal-<%=proposal.id %>" class="proposal">
-            <p class="title">
-              <%= proposal.title %>
-            </p>
-            <p class="format">
 
+            <p class="title">
+              <%= proposal.title %> <br>
+
+            </p>
+            <span class="badge badge-<%= proposal.contribution_format.parameterize %>">
+              <%= format_icon(proposal.contribution_format) %>
+              <%= proposal.contribution_format %>
+            </span>
+
+
+            <p class="format">
+              <br>
               <% if !current_user %>
                 <%= link_to "Sign In to Vote", new_user_session_path, :class => 'btn btn-primary' %>
               <% elsif( !current_user.nil? && (current_user.voted_for? proposal)) %>
@@ -30,21 +38,14 @@
                 <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, remote: :true, id: "like_#{proposal.id}", class: 'btn btn-info' %>
               <% end %>
 
-              <span class="badge badge-<%= proposal.contribution_format.parameterize %>">
-                <%= format_icon(proposal.contribution_format) %>
-                <%= proposal.contribution_format %>
-              </div>
-              <!-- <span class="<%#= proposal.contribution_format.parameterize %>">
-                <%#= format_icon(proposal.contribution_format) %>
-                <%#= proposal.contribution_format %>
-              </span> -->
-
-
             </p>
+
             <%= render 'likes', :proposal => proposal %>
 
             <p class="abstract">
-              <span class="bold">Abstract</span><br/>
+              <span class="bold">Abstract</span>
+
+                <br/>
               <%= proposal.abstract %>
             </p>
           </div>

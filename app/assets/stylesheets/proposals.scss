@@ -4,6 +4,7 @@
 
 @import "bootstrap";
 @import "fonts";
+@import "badges";
 
 $green:    #6c825f;
 $orange:   #ed8d1b;
@@ -139,6 +140,21 @@ p.bumper {
   // padding-bottom: 40px;
 }
 
+@mixin badge-var($bg, $foreground: #fff) {
+  background-color: $bg;
+  color: $foreground;
+  &[href] {
+    @include hover-focus {
+      color: $foreground;
+      text-decoration: none;
+      background-color: darken($bg, 10%);
+    }
+  }
+}
+
+// todo: partial
+
+
 
 .format {
   // color: #0099ae;
@@ -150,17 +166,7 @@ p.bumper {
     margin-right: 5px;
 
     // font-size: 16px;
-
-    &.badge-90-minute-workshop { background: $orange; color: #fff; }
-    &.badge-15-minute-talk-demo { background: #007aba; color: #fff; }
-    &.badge-6-2-1-lightning-talk { background: #fcaf4f; color: #fff; }
-    &.badge-15-minute-presentation { background: #c12638; color: #fff; }
-    &.badge-45-minute-panel { background: $green; color: #fff; }
-    &.badge-5-minute-lightning-talk { background: #fcaf4f; color: #fff; }
   }
-
-
-
 
 
   &.snapshot { color: $orange; }
