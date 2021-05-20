@@ -20,3 +20,6 @@
 .badge-15-minute-presentation  { @include badge-var($cedar-chest); }
 .badge-45-minute-panel         { @include badge-var($steel-teal); }
 .badge-5-minute-lightning-talk { @include badge-var($mauvelous); }
+.badge-25-minute-birds-of-a-feather-boaf-session { @include badge-var($quinacridone-magenta); }
+.badge-solution-room { @include badge-var($mauvelous); }
+.badge-10-15-minute-tutorial {@include badge-var($pansy-purple);}
