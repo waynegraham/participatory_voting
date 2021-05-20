@@ -38,7 +38,7 @@ html {
 }
 // Sections
 .section-header {
-  background-image: url('header-bg.png');
+  background-image: url(asset_path('header-bg.png'));
   background-color: #fbfafa;
   background-repeat: repeat-x;
   height: 130px;
