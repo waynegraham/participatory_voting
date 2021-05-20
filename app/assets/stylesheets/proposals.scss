@@ -30,6 +30,8 @@ html {
   border-top: 1px solid #e9e9e9;
 }
 
+
+
 .vertical-center {
   display: table-cell;
   vertical-align: middle;
@@ -401,6 +403,10 @@ footer {
     font-size: 15px;
     line-height: 20px;
     margin-bottom: 10px;
+  }
+
+  .bg-blue {
+    background-color: #34495e;
   }
 
   .footer-banner {

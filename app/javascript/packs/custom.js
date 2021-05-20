@@ -27,3 +27,14 @@ $(function() {
   });
 
 });
+
+// (function() {
+//   'use strict';
+//   console.log('DLF Forum Voting');
+//
+//   const media = document.querySelectorAll('.media');
+//   media.addEventListener('click', (e) => {
+//     console.log('click', e);
+//   });
+//   console.log(media);
+// })();
