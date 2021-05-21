@@ -14,20 +14,25 @@
   </head>
 
   <body>
-    <header class="masthead">
+    <header class="masthead" id="top">
       <%= render 'layouts/login'%>
       <%= render 'layouts/nav_section' %>
     </header>
 
-    <main role="main" id="top">
+    <main role="main">
       <%= render 'layouts/messages' %>
 
       <%= yield %>
 
-      <button type="button" class="to-top" >
+      <a class="top-link hide" href="#top" id="js-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+        <span class="sr-only sr-only-focusable">Back to top</span>
+      </a>
+
+      <!-- <button type="button" id="js-top" class="to-top" >
         <span class="fas fa-chevron-up"></span>
         <span class="sr-only sr-only-focusable">Back to top</span>
-      </button>
+      </button> -->
 
     </main>
 
