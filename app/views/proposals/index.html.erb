@@ -35,7 +35,7 @@
               <% elsif( !current_user.nil? && (current_user.voted_for? proposal)) %>
                 <%= link_to "Undo Vote", unlike_proposal_path(proposal), remote: :true, method: :put, id: "like_#{proposal.id}", class: 'btn btn-warning'%>
               <% else %>
-                <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, remote: :true, id: "like_#{proposal.id}", class: 'btn btn-info' %>
+                <%= link_to "Cast Vote", like_proposal_path(proposal), method: :put, remote: :true, id: "like_#{proposal.id}", class: 'btn btn-primary' %>
               <% end %>
 
             </p>
