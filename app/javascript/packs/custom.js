@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // console.log('navLinks', navLinks);
   for (const link of navLinks) {
     link.addEventListener('click', clickHandler);
-    console.log('link', link);
+    // console.log('link', link);
   }
 
   function clickHandler(e) {

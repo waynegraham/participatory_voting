@@ -50,6 +50,6 @@
 
 <p>Unhappy?
   <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'mt-3 btn btn-lg btn-danger btn-block', method: :delete %></p>
-  <%= link_to "Back", root_path %>
+  <%= link_to "Back", :back,  data: { turbolinks: false } %>
 </div>
 </div>
