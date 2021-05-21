@@ -9,7 +9,7 @@ module ProposalsHelper
   # @param proposal Proposal to display likes for
   # @return Formatted HTML (heart icon with number of votes)
   def display_likes(proposal)
-    '<span class="fas fa-heart"></span> '.html_safe + \
+    '<span class="fas fa-heart red"></span> '.html_safe + \
       pluralize(proposal.cached_votes_score, 'Like')
   end
 
