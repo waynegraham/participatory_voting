@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // @see https://wttech.blog/blog/2020/css-transitions-and-reduced-motion/
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)').matches;
+  console.log(prefersReducedMotion);
 
   // @see https://codepen.io/joshuamasen/pen/OYaYbL
-  // Set a variable for our button element.
   // Set a variable for our button element.
   const scrollToTopButton = document.getElementById('js-top');
 
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
     const href = this.getAttribute('href');
     const offsetTop = document.querySelector(href).offsetTop;
-    console.log('href', href);
-    console.log('offset', offsetTop);
+    // console.log('href', href);
+    // console.log('offset', offsetTop);
 
     if (!prefersReducedMotion) {
       scroll({
